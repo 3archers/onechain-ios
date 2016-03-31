@@ -13,6 +13,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(
         application: UIApplication,
@@ -25,6 +26,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 config.server = "https://onechain.herokuapp.com/parse"
             })
         )
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "userDidSignOut",
+            name: userDidSignOutNotification,
+            object: nil
+        )
+
+        if PFUser.currentUser() != nil {
+            window?.rootViewController =
+                storyboard.instantiateViewControllerWithIdentifier("Home Navigation Controller")
+                as! UINavigationController
+        }
         return true
+    }
+
+    func userDidSignOut() {
+        window?.rootViewController = storyboard.instantiateInitialViewController()
     }
 }

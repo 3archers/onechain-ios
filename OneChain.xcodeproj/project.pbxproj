@@ -13,6 +13,7 @@
 		14526E411CAC82F800BEF7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3F1CAC82F800BEF7F6 /* LaunchScreen.storyboard */; };
 		14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E491CACA14F00BEF7F6 /* SignInViewController.swift */; };
 		14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */; };
+		14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		14526E421CAC82F800BEF7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14526E491CACA14F00BEF7F6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4547B1A301BAACFD83DD89 /* Pods-OneChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.debug.xcconfig"; sourceTree = "<group>"; };
 		BED12B4D3AE4FE368B0FFF90 /* Pods-OneChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				14526E491CACA14F00BEF7F6 /* SignInViewController.swift */,
 				14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */,
+				14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */,
 				14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */,
 				14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */,
+				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

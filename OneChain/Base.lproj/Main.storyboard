@@ -82,17 +82,17 @@
                         <outlet property="emailField" destination="sLq-HL-Gs2" id="2hU-Yn-bm3"/>
                         <outlet property="passwordField" destination="api-Lj-jsw" id="Ooc-bJ-uGj"/>
                         <outlet property="usernameField" destination="Khs-M1-k63" id="aYA-cO-nTr"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="signup" id="q3l-uW-RF8"/>
+                        <segue destination="Apa-SI-wax" kind="modal" identifier="signup" id="q3l-uW-RF8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ur8-x5-wId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="200" y="-100"/>
         </scene>
-        <!--View Controller-->
+        <!--OneChain-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -102,10 +102,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="OneChain" id="acF-10-usB">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="OJk-AJ-lFe">
+                            <connections>
+                                <action selector="onSignOut:" destination="BYZ-38-t0r" id="iUQ-Dq-8TZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="300"/>
+            <point key="canvasLocation" x="1200" y="300"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="ESK-Pz-EDV">
@@ -173,15 +180,33 @@
                     <connections>
                         <outlet property="passwordField" destination="IZ6-ef-zMn" id="AgR-2A-fwq"/>
                         <outlet property="usernameField" destination="lJK-Z9-fEl" id="GkH-ER-qU5"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="signin" id="Bxc-e3-pDV"/>
+                        <segue destination="Apa-SI-wax" kind="modal" identifier="signin" id="Bxc-e3-pDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWi-T0-kMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="200" y="700"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vzH-D9-A1i">
+            <objects>
+                <navigationController storyboardIdentifier="Home Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="Apa-SI-wax" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zif-cT-f1o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Gw4-kg-FUL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GO3-0r-Rml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="300"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bxc-e3-pDV"/>
+        <segue reference="q3l-uW-RF8"/>
     </inferredMetricsTieBreakers>
 </document>
