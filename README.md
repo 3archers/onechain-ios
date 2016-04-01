@@ -1,6 +1,10 @@
 # OneChain
 OneChain is a powerful integrated platform for project management and task collaboration.
 
+## Database Schema
+
+<img src='er_diagram.png' title='ER Diagram' width='' alt='ER Diagram' />
+
 ## License
 
     Copyright [2016] [3archers]
