@@ -13,14 +13,27 @@ let userDidSignOutNotification = "userDidSignOutNotification"
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+
+    var projects = [PFObject]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+
+        fetchProjects()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
+    // MARK: - Actions
+
     @IBAction func onSignOut(sender: AnyObject) {
         PFUser.logOut()
         NSNotificationCenter.defaultCenter().postNotificationName(
@@ -28,4 +41,50 @@ class HomeViewController: UIViewController {
             object: nil
         )
     }
+
+    // MARK: - Helpers
+
+    func fetchProjects() {
+        let query = PFQuery(className: "Project")
+        query.includeKey("members")
+        query.whereKey("members", equalTo: PFUser.currentUser()!)
+        query.orderByDescending("createdAt")
+
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                for object in objects {
+                    print(object)
+                }
+                self.projects = objects
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+                // TODO: handle error
+            }
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return projects.count
+    }
+
+    func tableView(
+        tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "Project Cell",
+            forIndexPath: indexPath
+        ) as! ProjectTableViewCell
+
+        cell.project = projects[indexPath.row]
+        return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+
 }

@@ -14,6 +14,8 @@
 		14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E491CACA14F00BEF7F6 /* SignInViewController.swift */; };
 		14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */; };
 		14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */; };
+		146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */; };
+		146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		14526E491CACA14F00BEF7F6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCreateViewController.swift; sourceTree = "<group>"; };
+		146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4547B1A301BAACFD83DD89 /* Pods-OneChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.debug.xcconfig"; sourceTree = "<group>"; };
 		BED12B4D3AE4FE368B0FFF90 /* Pods-OneChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		14526E351CAC82F800BEF7F6 /* OneChain */ = {
 			isa = PBXGroup;
 			children = (
+				146FB48A1CB043A2005B42C1 /* Views */,
 				14526E481CACA12D00BEF7F6 /* ViewControllers */,
 				14526E361CAC82F800BEF7F6 /* AppDelegate.swift */,
 				14526E3A1CAC82F800BEF7F6 /* Main.storyboard */,
@@ -81,8 +86,17 @@
 				14526E491CACA14F00BEF7F6 /* SignInViewController.swift */,
 				14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */,
 				14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */,
+				146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		146FB48A1CB043A2005B42C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		753503DF787BF9C3CD81863D /* Frameworks */ = {
@@ -225,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */,
+				146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */,
 				14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */,
+				146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */,
 				14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */,
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
 			);
