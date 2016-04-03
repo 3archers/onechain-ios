@@ -36,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if PFUser.currentUser() != nil {
             window?.rootViewController =
-                storyboard.instantiateViewControllerWithIdentifier("Home Navigation Controller")
-                as! UINavigationController
+                storyboard.instantiateViewControllerWithIdentifier("Tab Bar Controller")
+                as! UITabBarController
         }
         return true
     }
