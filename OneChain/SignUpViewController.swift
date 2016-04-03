@@ -28,6 +28,7 @@ class SignUpViewController: UIViewController {
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         newUser.email = emailField.text
+        newUser["contacts"] = [PFUser]()
 
         newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if let error = error {
