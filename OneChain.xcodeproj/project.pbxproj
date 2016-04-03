@@ -17,6 +17,21 @@
 		1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5DF1CB0875100217815 /* MeTableViewController.swift */; };
 		1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */; };
 		1460F5E41CB0CC4800217815 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */; };
+		1460F5ED1CB1BD0100217815 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F5EB1CB1BD0100217815 /* Project.storyboard */; };
+		1460F5F31CB1C0DF00217815 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F5F11CB1C0DF00217815 /* Event.storyboard */; };
+		1460F5F61CB1C12800217815 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F5F41CB1C12800217815 /* Post.storyboard */; };
+		1460F5F91CB1C14300217815 /* File.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F5F71CB1C14300217815 /* File.storyboard */; };
+		1460F5FC1CB1C6D500217815 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F5FA1CB1C6D500217815 /* Task.storyboard */; };
+		1460F5FF1CB1C75D00217815 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5FE1CB1C75D00217815 /* TasksViewController.swift */; };
+		1460F6041CB1CA5000217815 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6031CB1CA5000217815 /* EventsViewController.swift */; };
+		1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6051CB1CB0A00217815 /* PostsViewController.swift */; };
+		1460F6081CB1CB4C00217815 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6071CB1CB4C00217815 /* FilesViewController.swift */; };
+		1460F60B1CB1CC5400217815 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F60A1CB1CC5400217815 /* ProjectDetailViewController.swift */; };
+		1460F60D1CB1D29000217815 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */; };
+		1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F60E1CB1D49900217815 /* EventDetailViewController.swift */; };
+		1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */; };
+		1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6121CB1D4F000217815 /* FileDetailViewController.swift */; };
+		1460F6161CB1DA6D00217815 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F6141CB1DA6D00217815 /* Me.storyboard */; };
 		146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */; };
 		146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
@@ -35,6 +50,21 @@
 		1460F5DF1CB0875100217815 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1460F5EC1CB1BD0100217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Project.storyboard; sourceTree = "<group>"; };
+		1460F5F21CB1C0DF00217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Event.storyboard; sourceTree = "<group>"; };
+		1460F5F51CB1C12800217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Post.storyboard; sourceTree = "<group>"; };
+		1460F5F81CB1C14300217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/File.storyboard; sourceTree = "<group>"; };
+		1460F5FB1CB1C6D500217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Task.storyboard; sourceTree = "<group>"; };
+		1460F5FE1CB1C75D00217815 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		1460F6031CB1CA5000217815 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		1460F6051CB1CB0A00217815 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		1460F6071CB1CB4C00217815 /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		1460F60A1CB1CC5400217815 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		1460F60E1CB1D49900217815 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		1460F6121CB1D4F000217815 /* FileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailViewController.swift; sourceTree = "<group>"; };
+		1460F6151CB1DA6D00217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCreateViewController.swift; sourceTree = "<group>"; };
 		146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,12 +105,11 @@
 		14526E351CAC82F800BEF7F6 /* OneChain */ = {
 			isa = PBXGroup;
 			children = (
+				1460F6171CB1DADD00217815 /* Storyboards */,
 				146FB48A1CB043A2005B42C1 /* Views */,
 				14526E481CACA12D00BEF7F6 /* ViewControllers */,
 				14526E361CAC82F800BEF7F6 /* AppDelegate.swift */,
-				14526E3A1CAC82F800BEF7F6 /* Main.storyboard */,
 				14526E3D1CAC82F800BEF7F6 /* Assets.xcassets */,
-				14526E3F1CAC82F800BEF7F6 /* LaunchScreen.storyboard */,
 				14526E421CAC82F800BEF7F6 /* Info.plist */,
 			);
 			path = OneChain;
@@ -89,14 +118,78 @@
 		14526E481CACA12D00BEF7F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1460F6091CB1CB9F00217815 /* Project */,
+				1460F6021CB1CA3100217815 /* File */,
+				1460F6011CB1CA2800217815 /* Post */,
+				1460F6001CB1CA1B00217815 /* Event */,
+				1460F5FD1CB1C73200217815 /* Task */,
 				14526E491CACA14F00BEF7F6 /* SignInViewController.swift */,
 				14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */,
-				14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */,
-				146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */,
 				1460F5DF1CB0875100217815 /* MeTableViewController.swift */,
 				1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1460F5FD1CB1C73200217815 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				1460F5FE1CB1C75D00217815 /* TasksViewController.swift */,
+				1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		1460F6001CB1CA1B00217815 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				1460F6031CB1CA5000217815 /* EventsViewController.swift */,
+				1460F60E1CB1D49900217815 /* EventDetailViewController.swift */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		1460F6011CB1CA2800217815 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				1460F6051CB1CB0A00217815 /* PostsViewController.swift */,
+				1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		1460F6021CB1CA3100217815 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				1460F6071CB1CB4C00217815 /* FilesViewController.swift */,
+				1460F6121CB1D4F000217815 /* FileDetailViewController.swift */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
+		1460F6091CB1CB9F00217815 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */,
+				146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */,
+				1460F60A1CB1CC5400217815 /* ProjectDetailViewController.swift */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		1460F6171CB1DADD00217815 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				14526E3A1CAC82F800BEF7F6 /* Main.storyboard */,
+				1460F6141CB1DA6D00217815 /* Me.storyboard */,
+				1460F5EB1CB1BD0100217815 /* Project.storyboard */,
+				1460F5FA1CB1C6D500217815 /* Task.storyboard */,
+				1460F5F71CB1C14300217815 /* File.storyboard */,
+				1460F5F41CB1C12800217815 /* Post.storyboard */,
+				1460F5F11CB1C0DF00217815 /* Event.storyboard */,
+				14526E3F1CAC82F800BEF7F6 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		146FB48A1CB043A2005B42C1 /* Views */ = {
@@ -186,9 +279,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1460F5ED1CB1BD0100217815 /* Project.storyboard in Resources */,
+				1460F5FC1CB1C6D500217815 /* Task.storyboard in Resources */,
 				14526E411CAC82F800BEF7F6 /* LaunchScreen.storyboard in Resources */,
 				14526E3E1CAC82F800BEF7F6 /* Assets.xcassets in Resources */,
 				14526E3C1CAC82F800BEF7F6 /* Main.storyboard in Resources */,
+				1460F6161CB1DA6D00217815 /* Me.storyboard in Resources */,
+				1460F5F61CB1C12800217815 /* Post.storyboard in Resources */,
+				1460F5F91CB1C14300217815 /* File.storyboard in Resources */,
+				1460F5F31CB1C0DF00217815 /* Event.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,14 +346,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */,
+				1460F6041CB1CA5000217815 /* EventsViewController.swift in Sources */,
+				1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */,
 				14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */,
+				1460F60B1CB1CC5400217815 /* ProjectDetailViewController.swift in Sources */,
 				1460F5E41CB0CC4800217815 /* UserTableViewCell.swift in Sources */,
 				146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */,
 				14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */,
+				1460F6081CB1CB4C00217815 /* FilesViewController.swift in Sources */,
 				146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */,
+				1460F60D1CB1D29000217815 /* TaskDetailViewController.swift in Sources */,
 				14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */,
 				1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */,
+				1460F5FF1CB1C75D00217815 /* TasksViewController.swift in Sources */,
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
+				1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */,
+				1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */,
 				1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +384,54 @@
 				14526E401CAC82F800BEF7F6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1460F5EB1CB1BD0100217815 /* Project.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1460F5EC1CB1BD0100217815 /* Base */,
+			);
+			name = Project.storyboard;
+			sourceTree = "<group>";
+		};
+		1460F5F11CB1C0DF00217815 /* Event.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1460F5F21CB1C0DF00217815 /* Base */,
+			);
+			name = Event.storyboard;
+			sourceTree = "<group>";
+		};
+		1460F5F41CB1C12800217815 /* Post.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1460F5F51CB1C12800217815 /* Base */,
+			);
+			name = Post.storyboard;
+			sourceTree = "<group>";
+		};
+		1460F5F71CB1C14300217815 /* File.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1460F5F81CB1C14300217815 /* Base */,
+			);
+			name = File.storyboard;
+			sourceTree = "<group>";
+		};
+		1460F5FA1CB1C6D500217815 /* Task.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1460F5FB1CB1C6D500217815 /* Base */,
+			);
+			name = Task.storyboard;
+			sourceTree = "<group>";
+		};
+		1460F6141CB1DA6D00217815 /* Me.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1460F6151CB1DA6D00217815 /* Base */,
+			);
+			name = Me.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
