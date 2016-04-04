@@ -20,9 +20,14 @@ class ContactsViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
         let contacts = PFUser.currentUser()!.objectForKey("contacts") as! [PFUser]
-        PFUser.fetchAllInBackground(contacts) { (objects: [AnyObject]?, error: NSError?) -> Void in
+        PFUser.fetchAllIfNeededInBackground(contacts) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.users = objects as! [PFUser]
                 self.tableView.reloadData()
@@ -35,6 +40,16 @@ class ContactsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "User Profile" {
+            let profileViewController = segue.destinationViewController as! ProfileViewController
+            profileViewController.user = (sender as! UserTableViewCell).user
+            profileViewController.showAddContactButton = false
+        }
     }
 }
 

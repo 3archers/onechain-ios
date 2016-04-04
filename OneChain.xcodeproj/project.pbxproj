@@ -32,6 +32,8 @@
 		1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */; };
 		1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6121CB1D4F000217815 /* FileDetailViewController.swift */; };
 		1460F6161CB1DA6D00217815 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460F6141CB1DA6D00217815 /* Me.storyboard */; };
+		1460F61A1CB1EBCC00217815 /* ContactSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6191CB1EBCC00217815 /* ContactSearchViewController.swift */; };
+		1460F61C1CB1FADD00217815 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F61B1CB1FADD00217815 /* ProfileViewController.swift */; };
 		146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */; };
 		146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
@@ -65,6 +67,8 @@
 		1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		1460F6121CB1D4F000217815 /* FileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailViewController.swift; sourceTree = "<group>"; };
 		1460F6151CB1DA6D00217815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
+		1460F6191CB1EBCC00217815 /* ContactSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactSearchViewController.swift; sourceTree = "<group>"; };
+		1460F61B1CB1FADD00217815 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCreateViewController.swift; sourceTree = "<group>"; };
 		146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,8 @@
 				14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */,
 				1460F5DF1CB0875100217815 /* MeTableViewController.swift */,
 				1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */,
+				1460F6191CB1EBCC00217815 /* ContactSearchViewController.swift */,
+				1460F61B1CB1FADD00217815 /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -346,7 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1460F61A1CB1EBCC00217815 /* ContactSearchViewController.swift in Sources */,
 				1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */,
+				1460F61C1CB1FADD00217815 /* ProfileViewController.swift in Sources */,
 				1460F6041CB1CA5000217815 /* EventsViewController.swift in Sources */,
 				1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */,
 				14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */,
