@@ -30,6 +30,7 @@ class ProjectCreateViewController: UIViewController {
             "description": descriptionTextView.text,
             "status": "active",
             "members": [PFUser.currentUser()!],
+            "tasks": [PFObject](),
             "log": ["@\(PFUser.currentUser()!.username!) created the project."]
         ]
 

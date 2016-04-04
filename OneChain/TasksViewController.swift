@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class TasksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    var project: PFObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +26,35 @@ class TasksViewController: UIViewController {
         super.viewWillAppear(animated)
 
         tabBarController?.navigationItem.title = "Tasks"
+        let newButton = UIBarButtonItem(
+            title: "New",
+            style: UIBarButtonItemStyle.Plain,
+            target: self,
+            action: "onNewButtonTouchUp:"
+        )
+        tabBarController?.navigationItem.rightBarButtonItem = newButton
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newTask" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let taskCreateViewController = navController.topViewController
+                as! TaskCreateViewController
+            taskCreateViewController.project = project
+            taskCreateViewController.members = project.valueForKey("members") as! [PFUser]
+        }
+    }
+
+    // MARK: - Actions
+
+    func onNewButtonTouchUp(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("newTask", sender: nil)
     }
 }
 

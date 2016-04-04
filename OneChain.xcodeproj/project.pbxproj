@@ -35,6 +35,7 @@
 		146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */; };
 		146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
+		BF162D3A1CB1F843001DD84B /* TaskCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D391CB1F843001DD84B /* TaskCreateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4547B1A301BAACFD83DD89 /* Pods-OneChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.debug.xcconfig"; sourceTree = "<group>"; };
 		BED12B4D3AE4FE368B0FFF90 /* Pods-OneChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.release.xcconfig"; sourceTree = "<group>"; };
+		BF162D391CB1F843001DD84B /* TaskCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				1460F5FE1CB1C75D00217815 /* TasksViewController.swift */,
 				1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */,
+				BF162D391CB1F843001DD84B /* TaskCreateViewController.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				1460F6081CB1CB4C00217815 /* FilesViewController.swift in Sources */,
 				146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */,
 				1460F60D1CB1D29000217815 /* TaskDetailViewController.swift in Sources */,
+				BF162D3A1CB1F843001DD84B /* TaskCreateViewController.swift in Sources */,
 				14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */,
 				1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */,
 				1460F5FF1CB1C75D00217815 /* TasksViewController.swift in Sources */,
