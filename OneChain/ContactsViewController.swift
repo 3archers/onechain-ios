@@ -20,9 +20,14 @@ class ContactsViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
         let contacts = PFUser.currentUser()!.objectForKey("contacts") as! [PFUser]
-        PFUser.fetchAllInBackground(contacts) { (objects: [AnyObject]?, error: NSError?) -> Void in
+        PFUser.fetchAllIfNeededInBackground(contacts) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.users = objects as! [PFUser]
                 self.tableView.reloadData()
