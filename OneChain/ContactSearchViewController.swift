@@ -14,6 +14,8 @@ class ContactSearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var contacts = [PFUser]()
+    var existContactIds: NSSet!
+
     lazy var searchBar = UISearchBar()
 
     override func viewDidLoad() {
@@ -26,6 +28,9 @@ class ContactSearchViewController: UIViewController {
         searchBar.placeholder = "Search contact by username"
         searchBar.becomeFirstResponder()
         navigationItem.titleView = searchBar
+
+        let existContacts = PFUser.currentUser()!.objectForKey("contacts") as! [PFUser]
+        existContactIds = NSSet(array: existContacts.map({ contact in contact.objectId! }))
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +42,14 @@ class ContactSearchViewController: UIViewController {
     @IBAction func onCancel(sender: AnyObject) {
         view.endEditing(true)
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let profileViewController = segue.destinationViewController as! ProfileViewController
+        profileViewController.user = (sender as! UserTableViewCell).user
+        profileViewController.showAddContactButton = true
     }
 }
 
@@ -71,7 +84,9 @@ extension ContactSearchViewController: UISearchBarDelegate {
         query?.whereKey("username", containsString: searchBar.text ?? "")
         query?.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let objects = objects {
-                self.contacts = objects as! [PFUser]
+                self.contacts = objects.filter({ object in
+                    !self.existContactIds.containsObject(object.objectId!)
+                }) as! [PFUser]
                 self.tableView.reloadData()
             } else {
                 print(error?.localizedDescription)

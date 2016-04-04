@@ -169,11 +169,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="User Cell" rowHeight="50" id="ITP-cF-gS6" customClass="UserTableViewCell" customModule="OneChain" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="User Cell" rowHeight="50" id="ITP-cF-gS6" customClass="UserTableViewCell" customModule="OneChain" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ITP-cF-gS6" id="fg6-XD-o7r">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-4r-DCp">
@@ -190,6 +190,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="usernameLabel" destination="f47-4r-DCp" id="Vmf-mJ-Hv3"/>
+                                            <segue destination="AJf-wT-Cio" kind="push" identifier="User Profile" id="Keq-wK-2RH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -218,6 +219,64 @@
             </objects>
             <point key="canvasLocation" x="1200" y="700"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="G8t-o6-0vb">
+            <objects>
+                <viewController id="AJf-wT-Cio" customClass="ProfileViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z33-ip-PW0"/>
+                        <viewControllerLayoutGuide type="bottom" id="cK5-vd-Dbu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MPN-9J-0EK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKN-16-X1a">
+                                <rect key="frame" x="16" y="88" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-gW-41O">
+                                <rect key="frame" x="16" y="125" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdA-cE-jZw">
+                                <rect key="frame" x="16" y="162" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5dB-kS-Mys"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="onAddContact:" destination="AJf-wT-Cio" eventType="touchUpInside" id="ebA-Qr-HSR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WdA-cE-jZw" firstAttribute="top" secondItem="Cuf-gW-41O" secondAttribute="bottom" constant="16" id="AUT-kI-ZAU"/>
+                            <constraint firstItem="Cuf-gW-41O" firstAttribute="top" secondItem="oKN-16-X1a" secondAttribute="bottom" constant="16" id="CMq-ef-Alv"/>
+                            <constraint firstAttribute="trailing" secondItem="WdA-cE-jZw" secondAttribute="trailing" constant="16" id="SUi-9p-ga8"/>
+                            <constraint firstItem="oKN-16-X1a" firstAttribute="top" secondItem="z33-ip-PW0" secondAttribute="bottom" constant="24" id="cEF-JT-Yeg"/>
+                            <constraint firstItem="WdA-cE-jZw" firstAttribute="leading" secondItem="oKN-16-X1a" secondAttribute="leading" id="hm6-oG-z9s"/>
+                            <constraint firstItem="WdA-cE-jZw" firstAttribute="leading" secondItem="MPN-9J-0EK" secondAttribute="leading" constant="16" id="oDH-nB-jiK"/>
+                            <constraint firstItem="Cuf-gW-41O" firstAttribute="leading" secondItem="oKN-16-X1a" secondAttribute="leading" id="qCR-c9-ZpA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="LBs-Ij-wy0"/>
+                    <connections>
+                        <outlet property="addContactButton" destination="WdA-cE-jZw" id="ylB-ak-JmX"/>
+                        <outlet property="emailLabel" destination="Cuf-gW-41O" id="Anz-P0-pvr"/>
+                        <outlet property="usernameLabel" destination="oKN-16-X1a" id="S8a-5k-cdi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAo-VZ-MbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="700"/>
+        </scene>
         <!--Contact Search View Controller-->
         <scene sceneID="rTO-ki-heI">
             <objects>
@@ -234,11 +293,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="User Cell" rowHeight="50" id="iyK-Lr-Mmz" customClass="UserTableViewCell" customModule="OneChain" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="User Cell" rowHeight="50" id="iyK-Lr-Mmz" customClass="UserTableViewCell" customModule="OneChain" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyK-Lr-Mmz" id="bBg-b6-MXb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFO-iV-ssE">
@@ -255,6 +314,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="usernameLabel" destination="BFO-iV-ssE" id="hR8-IY-2kF"/>
+                                            <segue destination="AJf-wT-Cio" kind="push" id="feM-wd-G5Z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -322,4 +382,7 @@
             <point key="canvasLocation" x="1200" y="0.0"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Keq-wK-2RH"/>
+    </inferredMetricsTieBreakers>
 </document>

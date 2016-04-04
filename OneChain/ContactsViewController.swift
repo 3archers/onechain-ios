@@ -36,6 +36,16 @@ class ContactsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "User Profile" {
+            let profileViewController = segue.destinationViewController as! ProfileViewController
+            profileViewController.user = (sender as! UserTableViewCell).user
+            profileViewController.showAddContactButton = false
+        }
+    }
 }
 
 extension ContactsViewController: UITableViewDataSource {
