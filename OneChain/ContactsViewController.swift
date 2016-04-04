@@ -75,4 +75,17 @@ extension ContactsViewController: UITableViewDataSource {
 
 extension ContactsViewController: UITableViewDelegate {
 
+    func tableView(
+        tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath
+    ) {
+        if editingStyle == .Delete {
+            let currentUser = PFUser.currentUser()!
+            currentUser.removeObject(users[indexPath.row], forKey: "contacts")
+            currentUser.saveInBackground()
+            users.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
 }
