@@ -16,6 +16,7 @@ class ProjectCreateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var contacts = [PFUser]()
+    var selected: [Bool] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,13 @@ class ProjectCreateViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func onSubmit(sender: AnyObject) {
-        var selectedContacts = [PFUser]()
-        if let indexPaths = tableView.indexPathsForSelectedRows {
-            for indexPath in indexPaths {
-                selectedContacts.append(contacts[indexPath.row])
+        var selectedContacts = [PFUser.currentUser()!]
+        for (index, contact) in contacts.enumerate() {
+            if (selected[index]) {
+                selectedContacts.append(contact)
             }
         }
-        selectedContacts.append(PFUser.currentUser()!)
+
         let dictionary: [String: AnyObject] = [
             "name": projectNameField.text!,
             "description": descriptionTextView.text,
@@ -46,6 +47,7 @@ class ProjectCreateViewController: UIViewController {
             "members": selectedContacts,
             "log": ["@\(PFUser.currentUser()!.username!) created the project."]
         ]
+
         let project = PFObject(className: "Project", dictionary: dictionary)
         project.saveInBackgroundWithBlock{ (success: Bool, error: NSError?) -> Void in
             if success {
@@ -71,6 +73,7 @@ class ProjectCreateViewController: UIViewController {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.contacts = objects as! [PFUser]
+                self.selected = [Bool](count: self.contacts.count, repeatedValue: false)
                 self.tableView.reloadData()
             } else {
                 print(error?.localizedDescription)
@@ -94,19 +97,22 @@ extension ProjectCreateViewController: UITableViewDataSource {
         tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.selectionStyle = .None
-        cell.textLabel?.text = "\(contacts[indexPath.row].username!)"
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "Contact Cell",
+            forIndexPath: indexPath
+        ) as! UserTableViewCell
+
+        cell.user = contacts[indexPath.row]
+        cell.accessoryType = selected[indexPath.row] ? .Checkmark : .None
         return cell
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
-    }
+        selected[indexPath.row] = !selected[indexPath.row]
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell!.accessoryType = UITableViewCellAccessoryType.None
+        cell?.accessoryType = selected[indexPath.row] ? .Checkmark : .None
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
