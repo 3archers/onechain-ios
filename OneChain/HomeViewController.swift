@@ -87,4 +87,13 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Project" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            let projectDetailViewController = (tabBarController.viewControllers?.first)!
+                as! ProjectDetailViewController
+            projectDetailViewController.project = projects[indexPath.row]
+        }
+    }
 }
