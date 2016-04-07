@@ -24,7 +24,9 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+    }
 
+    override func viewWillAppear(animated: Bool) {
         fetchProjects()
     }
 

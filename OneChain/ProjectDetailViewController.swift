@@ -19,19 +19,41 @@ class ProjectDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        projectNameLabel.text = project["name"] as? String
-        projectDescriptionLabel.text = project["description"] as? String
-        fetchMembers()
+
+        tabBarController?.navigationItem.title = "Project Detail"
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Edit",
+            style: .Plain,
+            target: self,
+            action: "onEdit:")
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        tabBarController?.navigationItem.title = "Project Detail"
+        projectNameLabel.text = project["name"] as? String
+        projectDescriptionLabel.text = project["description"] as? String
+        fetchMembers()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Edit Project" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let editViewController = navController.topViewController as! ProjectEditViewController
+            editViewController.project = project
+        }
+    }
+
+    // MARK: - Actions
+
+    func onEdit(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("Edit Project", sender: sender)
     }
 
     // MARK: - Helpers
