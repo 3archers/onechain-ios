@@ -52,9 +52,6 @@ class HomeViewController: UIViewController {
 
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let objects = objects {
-                for object in objects {
-                    print(object)
-                }
                 self.projects = objects
                 self.tableView.reloadData()
             } else {
