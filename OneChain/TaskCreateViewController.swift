@@ -25,9 +25,9 @@ class TaskCreateViewController: UIViewController {
         super.viewDidLoad()
 
         descriptionTextView.delegate = self
-        /*if (descriptionTextView.text == "") {
+        if (descriptionTextView.text == "") {
             textViewDidEndEditing(descriptionTextView)
-        }*/
+        }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tapGestureRecognizer)
 
@@ -56,7 +56,7 @@ class TaskCreateViewController: UIViewController {
         ]
 
         let task = PFObject(className: "Task", dictionary: dictionary)
-        project.addObject(task, forKey: "Tasks")
+        project.addObject(task, forKey: "tasks")
         project.saveInBackground()
 
         view.endEditing(true)
