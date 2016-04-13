@@ -31,6 +31,8 @@ class TaskCreateViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tapGestureRecognizer)
 
+        dueDate = NSDate()
+
         ownerPickerView.dataSource = self
         ownerPickerView.delegate = self
     }

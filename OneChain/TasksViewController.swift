@@ -62,6 +62,12 @@ class TasksViewController: UIViewController {
                 as! TaskCreateViewController
             taskCreateViewController.project = project
             taskCreateViewController.members = project["members"] as! [PFUser]
+        } else if segue.identifier == "taskDetail" {
+            let indexPath = tableView.indexPathForCell(sender as! TaskTableViewCell)!
+            let taskDetailViewController = segue.destinationViewController
+                as! TaskDetailViewController
+            taskDetailViewController.project = project
+            taskDetailViewController.task = tasks[indexPath.row]
         }
     }
 

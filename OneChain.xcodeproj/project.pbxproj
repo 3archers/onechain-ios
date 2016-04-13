@@ -27,7 +27,6 @@
 		1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6051CB1CB0A00217815 /* PostsViewController.swift */; };
 		1460F6081CB1CB4C00217815 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6071CB1CB4C00217815 /* FilesViewController.swift */; };
 		1460F60B1CB1CC5400217815 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F60A1CB1CC5400217815 /* ProjectDetailViewController.swift */; };
-		1460F60D1CB1D29000217815 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */; };
 		1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F60E1CB1D49900217815 /* EventDetailViewController.swift */; };
 		1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */; };
 		1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F6121CB1D4F000217815 /* FileDetailViewController.swift */; };
@@ -36,6 +35,13 @@
 		146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
 		BF162D3A1CB1F843001DD84B /* TaskCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D391CB1F843001DD84B /* TaskCreateViewController.swift */; };
+		BF162D3E1CB41C2E001DD84B /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D3D1CB41C2E001DD84B /* TaskTableViewCell.swift */; };
+		BF162D421CB6B7D9001DD84B /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D411CB6B7D9001DD84B /* TaskDetailViewController.swift */; };
+		BF162D441CB6CA1C001DD84B /* TaskNameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D431CB6CA1C001DD84B /* TaskNameEditViewController.swift */; };
+		BF162D461CB6FA3A001DD84B /* TaskDescriptionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D451CB6FA3A001DD84B /* TaskDescriptionEditViewController.swift */; };
+		BF162D481CB6FA53001DD84B /* TaskStatusEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D471CB6FA53001DD84B /* TaskStatusEditViewController.swift */; };
+		BF162D4A1CB6FA68001DD84B /* TaskOwnerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D491CB6FA68001DD84B /* TaskOwnerEditViewController.swift */; };
+		BF162D4C1CB6FA8B001DD84B /* TaskDueDateEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF162D4B1CB6FA8B001DD84B /* TaskDueDateEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +67,6 @@
 		1460F6051CB1CB0A00217815 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		1460F6071CB1CB4C00217815 /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		1460F60A1CB1CC5400217815 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
-		1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		1460F60E1CB1D49900217815 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		1460F6101CB1D4DC00217815 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		1460F6121CB1D4F000217815 /* FileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +77,13 @@
 		7B4547B1A301BAACFD83DD89 /* Pods-OneChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.debug.xcconfig"; sourceTree = "<group>"; };
 		BED12B4D3AE4FE368B0FFF90 /* Pods-OneChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.release.xcconfig"; sourceTree = "<group>"; };
 		BF162D391CB1F843001DD84B /* TaskCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCreateViewController.swift; sourceTree = "<group>"; };
+		BF162D3D1CB41C2E001DD84B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		BF162D411CB6B7D9001DD84B /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		BF162D431CB6CA1C001DD84B /* TaskNameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNameEditViewController.swift; sourceTree = "<group>"; };
+		BF162D451CB6FA3A001DD84B /* TaskDescriptionEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDescriptionEditViewController.swift; sourceTree = "<group>"; };
+		BF162D471CB6FA53001DD84B /* TaskStatusEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStatusEditViewController.swift; sourceTree = "<group>"; };
+		BF162D491CB6FA68001DD84B /* TaskOwnerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOwnerEditViewController.swift; sourceTree = "<group>"; };
+		BF162D4B1CB6FA8B001DD84B /* TaskDueDateEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDueDateEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +149,13 @@
 			isa = PBXGroup;
 			children = (
 				1460F5FE1CB1C75D00217815 /* TasksViewController.swift */,
-				1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */,
 				BF162D391CB1F843001DD84B /* TaskCreateViewController.swift */,
+				BF162D411CB6B7D9001DD84B /* TaskDetailViewController.swift */,
+				BF162D431CB6CA1C001DD84B /* TaskNameEditViewController.swift */,
+				BF162D451CB6FA3A001DD84B /* TaskDescriptionEditViewController.swift */,
+				BF162D471CB6FA53001DD84B /* TaskStatusEditViewController.swift */,
+				BF162D491CB6FA68001DD84B /* TaskOwnerEditViewController.swift */,
+				BF162D4B1CB6FA8B001DD84B /* TaskDueDateEditViewController.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -200,6 +217,7 @@
 			children = (
 				146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */,
 				1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */,
+				BF162D3D1CB41C2E001DD84B /* TaskTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -352,17 +370,23 @@
 				1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */,
 				1460F6041CB1CA5000217815 /* EventsViewController.swift in Sources */,
 				1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */,
+				BF162D461CB6FA3A001DD84B /* TaskDescriptionEditViewController.swift in Sources */,
 				14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */,
 				1460F60B1CB1CC5400217815 /* ProjectDetailViewController.swift in Sources */,
+				BF162D441CB6CA1C001DD84B /* TaskNameEditViewController.swift in Sources */,
 				1460F5E41CB0CC4800217815 /* UserTableViewCell.swift in Sources */,
 				146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */,
+				BF162D481CB6FA53001DD84B /* TaskStatusEditViewController.swift in Sources */,
 				14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */,
 				1460F6081CB1CB4C00217815 /* FilesViewController.swift in Sources */,
 				146FB4891CB038CC005B42C1 /* ProjectCreateViewController.swift in Sources */,
-				1460F60D1CB1D29000217815 /* TaskDetailViewController.swift in Sources */,
 				BF162D3A1CB1F843001DD84B /* TaskCreateViewController.swift in Sources */,
+				BF162D3E1CB41C2E001DD84B /* TaskTableViewCell.swift in Sources */,
+				BF162D4C1CB6FA8B001DD84B /* TaskDueDateEditViewController.swift in Sources */,
 				14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */,
 				1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */,
+				BF162D421CB6B7D9001DD84B /* TaskDetailViewController.swift in Sources */,
+				BF162D4A1CB6FA68001DD84B /* TaskOwnerEditViewController.swift in Sources */,
 				1460F5FF1CB1C75D00217815 /* TasksViewController.swift in Sources */,
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
 				1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */,
