@@ -40,6 +40,11 @@ class HomeViewController: UIViewController {
             let tabBarController = segue.destinationViewController as! UITabBarController
             let tasksViewController = tabBarController.viewControllers![1] as! TasksViewController
             tasksViewController.project = projects[row]
+        } else if segue.identifier == "New Project" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let projectCreateViewController = navController.topViewController
+                as! ProjectCreateViewController
+            projectCreateViewController.delegate = self
         }
     }
 
@@ -95,4 +100,15 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
 
+}
+
+extension HomeViewController: ProjectCreateViewControllerDelegate {
+
+    func projectCreateViewController(
+        projectCreateViewController: ProjectCreateViewController,
+        didCreateNewProject project: PFObject
+    ) {
+        projects.insert(project, atIndex: 0)
+        tableView.reloadData()
+    }
 }

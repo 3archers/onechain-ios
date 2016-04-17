@@ -95,7 +95,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="Twx-y2-Vlv">
                             <connections>
-                                <segue destination="CzE-Zc-SU8" kind="modal" id="yYU-cE-Bfj"/>
+                                <segue destination="CzE-Zc-SU8" kind="modal" identifier="New Project" id="yYU-cE-Bfj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
