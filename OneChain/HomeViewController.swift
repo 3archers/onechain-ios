@@ -32,6 +32,17 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Project Detail" {
+            let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            let tasksViewController = tabBarController.viewControllers![1] as! TasksViewController
+            tasksViewController.project = projects[row]
+        }
+    }
+
     // MARK: - Actions
 
     @IBAction func onSignOut(sender: AnyObject) {
