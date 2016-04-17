@@ -30,7 +30,7 @@ class TaskTableViewCell: UITableViewCell {
                 dueDateLabel.text = ""
             }
 
-            profileImageView.layer.cornerRadius = 1
+            profileImageView.layer.cornerRadius = 4
             profileImageView.clipsToBounds = true
             setProfileImage()
         }

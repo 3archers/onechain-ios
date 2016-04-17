@@ -21,8 +21,7 @@ class TasksViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 72
+        tableView.rowHeight = 65
     }
 
     override func viewWillAppear(animated: Bool) {
