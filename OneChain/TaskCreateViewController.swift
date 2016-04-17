@@ -25,8 +25,23 @@ class TaskCreateViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Due Date" {
+            let dueDateEditViewController = segue.destinationViewController
+                as! TaskDueDateEditViewController
+            dueDateEditViewController.task = task
+        }
     }
 
     // MARK: - Action
@@ -88,7 +103,8 @@ extension TaskCreateViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier(
                 "Due Date Cell",
                 forIndexPath: indexPath
-            )
+            ) as! TaskDueDateCell
+            cell.task = task
             return cell
         default:
             return UITableViewCell()

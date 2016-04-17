@@ -160,7 +160,7 @@
                                             <segue destination="8w9-EA-iTS" kind="push" id="5LB-ur-a5r"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Due Date Cell" id="ZXn-Oi-lZB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Due Date Cell" id="ZXn-Oi-lZB" customClass="TaskDueDateCell" customModule="OneChain" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="280" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZXn-Oi-lZB" id="G5n-Yz-RKW">
@@ -180,7 +180,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="K1G-u6-iDN" kind="push" id="E6f-lg-ZBl"/>
+                                            <outlet property="dueDateLabel" destination="Zfe-tC-LyF" id="m9Z-xi-aRE"/>
+                                            <segue destination="K1G-u6-iDN" kind="push" identifier="Due Date" id="E6f-lg-ZBl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -256,7 +257,7 @@
         <!--Due Date-->
         <scene sceneID="PyK-fz-afA">
             <objects>
-                <viewController id="K1G-u6-iDN" sceneMemberID="viewController">
+                <viewController id="K1G-u6-iDN" customClass="TaskDueDateEditViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UHN-Ju-wgz"/>
                         <viewControllerLayoutGuide type="bottom" id="QAa-RE-5sI"/>
@@ -283,6 +284,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Due Date" id="S65-Nh-uBf"/>
+                    <connections>
+                        <outlet property="datePicker" destination="wCm-ZU-9HE" id="gUr-ut-wFA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSE-Rx-fHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
