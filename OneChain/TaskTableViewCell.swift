@@ -32,22 +32,7 @@ class TaskTableViewCell: UITableViewCell {
 
             profileImageView.layer.cornerRadius = 1
             profileImageView.clipsToBounds = true
-            if let owner = task["owner"] as? PFUser {
-                if let imageFile = owner.objectForKey("imageFile") as? PFFile {
-                    imageFile.getDataInBackgroundWithBlock {
-                        (data: NSData?, error: NSError?) -> Void in
-                        if let data = data {
-                            self.profileImageView.image = UIImage(data: data)
-                        } else {
-                            print(error?.localizedDescription)
-                        }
-                    }
-                } else {
-                    profileImageView.image = UIImage(named: "DefaultProfileImage")
-                }
-            } else {
-                profileImageView.image = UIImage(named: "DefaultProfileImage")
-            }
+            setProfileImage()
         }
     }
 
@@ -57,5 +42,35 @@ class TaskTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    // MARK: - Helpers
+
+    func setProfileImage() {
+        var owner = task["owner"] as? PFUser
+        if owner == nil {
+            profileImageView.image = UIImage(named: "DefaultProfileImage")
+            return
+        }
+
+        owner!.fetchIfNeededInBackgroundWithBlock { (object: AnyObject?, error: NSError?) -> Void in
+            if let object = object {
+                owner = (object as! PFUser)
+                if let imageFile = owner!.objectForKey("imageFile") as? PFFile {
+                    imageFile.getDataInBackgroundWithBlock {
+                        (data: NSData?, error: NSError?) -> Void in
+                        if let data = data {
+                            self.profileImageView.image = UIImage(data: data)
+                        } else {
+                            print(error?.localizedDescription)
+                        }
+                    }
+                } else {
+                    self.profileImageView.image = UIImage(named: "DefaultProfileImage")
+                }
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 }

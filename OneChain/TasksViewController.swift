@@ -36,8 +36,7 @@ class TasksViewController: UIViewController {
             action: "onNew:"
         )
 
-        tasks = project["tasks"] as! [PFObject]
-        PFObject.fetchAllIfNeededInBackground(tasks) {
+        PFObject.fetchAllIfNeededInBackground((project["tasks"] as! [PFObject])) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.tasks = objects as! [PFObject]
