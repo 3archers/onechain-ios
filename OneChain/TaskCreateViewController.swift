@@ -96,6 +96,7 @@ extension TaskCreateViewController: UITableViewDataSource {
                 "Note Cell",
                 forIndexPath: indexPath
             ) as! TaskNoteCell
+            cell.task = task
             cell.noteTextView.delegate = self
             return cell
         case 2:
@@ -116,13 +117,14 @@ extension TaskCreateViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+}
+
+extension TaskCreateViewController: UITableViewDelegate {
+
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
-}
-
-extension TaskCreateViewController: UITableViewDelegate {
 
     func tableView(
         tableView: UITableView,

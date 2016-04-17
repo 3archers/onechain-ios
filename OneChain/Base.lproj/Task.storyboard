@@ -62,7 +62,7 @@
                                             <outlet property="dueDateLabel" destination="N7C-Ya-KwP" id="gIf-Ug-Fg7"/>
                                             <outlet property="profileImageView" destination="1eZ-5F-l4D" id="AqN-ac-bGi"/>
                                             <outlet property="titleLabel" destination="MaS-Cn-Woa" id="e3j-CU-mxY"/>
-                                            <segue destination="9lF-Gb-6xe" kind="push" id="w3i-8H-uA8"/>
+                                            <segue destination="9lF-Gb-6xe" kind="push" identifier="task detail" id="w3i-8H-uA8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -295,7 +295,7 @@
                             <constraint firstItem="deC-vY-cLM" firstAttribute="top" secondItem="ljL-Ml-9KY" secondAttribute="top" id="InR-yF-Mnk"/>
                             <constraint firstAttribute="trailing" secondItem="deC-vY-cLM" secondAttribute="trailing" id="N4r-4A-uu2"/>
                             <constraint firstItem="deC-vY-cLM" firstAttribute="leading" secondItem="ljL-Ml-9KY" secondAttribute="leading" id="S7I-5n-VMb"/>
-                            <constraint firstItem="rGL-gh-XXg" firstAttribute="top" secondItem="deC-vY-cLM" secondAttribute="bottom" id="toU-kI-NBX"/>
+                            <constraint firstItem="rGL-gh-XXg" firstAttribute="top" secondItem="deC-vY-cLM" secondAttribute="bottom" constant="-49" id="toU-kI-NBX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task Owner" id="lff-MF-HDC"/>
@@ -318,9 +318,122 @@
                     <view key="view" contentMode="scaleToFill" id="pmE-vG-Abi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gJF-Rl-nmZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Title Cell" id="sxF-Mz-xEV" customClass="TaskTitleCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sxF-Mz-xEV" id="D6v-ES-2J1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPF-nB-WEN">
+                                                    <rect key="frame" x="16" y="2" width="292" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="NFX-CD-6Z7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onTitleFieldEditingChanged:" destination="sxF-Mz-xEV" eventType="editingDidEnd" id="2gZ-SJ-1NC"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="XPF-nB-WEN" secondAttribute="trailing" constant="12" id="6aq-5T-b9f"/>
+                                                <constraint firstItem="XPF-nB-WEN" firstAttribute="leading" secondItem="D6v-ES-2J1" secondAttribute="leading" constant="16" id="XtD-D4-lco"/>
+                                                <constraint firstItem="XPF-nB-WEN" firstAttribute="centerY" secondItem="D6v-ES-2J1" secondAttribute="centerY" id="yPi-uj-h0W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleField" destination="XPF-nB-WEN" id="SDa-9Q-Puh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Note Cell" rowHeight="100" id="vMg-QU-lUT" customClass="TaskNoteCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="136" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vMg-QU-lUT" id="48s-WJ-gyZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-t1-ekM">
+                                                    <rect key="frame" x="12" y="8" width="300" height="83"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tNU-t1-ekM" secondAttribute="bottom" constant="8" id="35m-Fs-To5"/>
+                                                <constraint firstItem="tNU-t1-ekM" firstAttribute="top" secondItem="48s-WJ-gyZ" secondAttribute="top" constant="8" id="5X4-Vl-vEi"/>
+                                                <constraint firstAttribute="trailing" secondItem="tNU-t1-ekM" secondAttribute="trailing" constant="8" id="e6X-Z8-cM4"/>
+                                                <constraint firstItem="tNU-t1-ekM" firstAttribute="leading" secondItem="48s-WJ-gyZ" secondAttribute="leading" constant="12" id="n41-eI-oaj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noteTextView" destination="tNU-t1-ekM" id="c27-31-uR4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Owner Cell" id="HYM-Mx-mMB" customClass="TaskOwnerCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="236" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HYM-Mx-mMB" id="AeR-zV-cRY">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09l-HP-RDs">
+                                                    <rect key="frame" x="16" y="11" width="51" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="09l-HP-RDs" firstAttribute="leading" secondItem="AeR-zV-cRY" secondAttribute="leading" constant="16" id="1Xs-6R-VRT"/>
+                                                <constraint firstItem="09l-HP-RDs" firstAttribute="centerY" secondItem="AeR-zV-cRY" secondAttribute="centerY" id="SsV-cd-wDD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ownerLabel" destination="09l-HP-RDs" id="XYc-Mr-dKQ"/>
+                                            <segue destination="8w9-EA-iTS" kind="push" identifier="Owner" id="Jsc-mC-DD4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Due Date Cell" id="FTY-Ek-vmw" customClass="TaskDueDateCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FTY-Ek-vmw" id="RUG-kr-OYY">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stw-ng-NtP">
+                                                    <rect key="frame" x="16" y="11" width="72" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="stw-ng-NtP" firstAttribute="leading" secondItem="RUG-kr-OYY" secondAttribute="leading" constant="16" id="6oe-Xy-9tW"/>
+                                                <constraint firstItem="stw-ng-NtP" firstAttribute="centerY" secondItem="RUG-kr-OYY" secondAttribute="centerY" id="Ppn-U7-cII"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dueDateLabel" destination="stw-ng-NtP" id="gmm-ND-cWc"/>
+                                            <segue destination="K1G-u6-iDN" kind="push" identifier="Due Date" id="dqI-0a-wES"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Task Detail" id="qhy-3D-5Jm"/>
+                    <connections>
+                        <outlet property="tableView" destination="gJF-Rl-nmZ" id="A8d-Zz-cUw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNp-pJ-8pQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -383,4 +496,8 @@
             <point key="canvasLocation" x="200" y="-400"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jsc-mC-DD4"/>
+        <segue reference="dqI-0a-wES"/>
+    </inferredMetricsTieBreakers>
 </document>

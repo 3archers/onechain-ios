@@ -48,6 +48,7 @@ class TaskOwnerEditViewController: UIViewController {
     }
 
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         if let selectedRow = selectedRow {
             task["owner"] = members[selectedRow]
         }

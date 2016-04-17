@@ -13,6 +13,12 @@ class TaskNoteCell: UITableViewCell {
 
     @IBOutlet weak var noteTextView: UITextView!
 
+    var task: PFObject! {
+        didSet {
+            noteTextView.text = task["note"] as? String
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

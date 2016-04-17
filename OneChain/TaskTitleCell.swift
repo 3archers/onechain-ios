@@ -13,7 +13,11 @@ class TaskTitleCell: UITableViewCell {
 
     @IBOutlet weak var titleField: UITextField!
 
-    var task: PFObject!
+    var task: PFObject! {
+        didSet {
+            titleField.text = task["title"] as? String
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

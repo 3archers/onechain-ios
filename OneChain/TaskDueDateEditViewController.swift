@@ -24,6 +24,7 @@ class TaskDueDateEditViewController: UIViewController {
     }
 
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         task["due_date"] = datePicker.date
     }
 

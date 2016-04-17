@@ -66,6 +66,12 @@ class TasksViewController: UIViewController {
             let taskCreateViewController = navController.topViewController
                 as! TaskCreateViewController
             taskCreateViewController.project = project
+        } else if segue.identifier == "task detail" {
+            let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+            let taskDetailViewController = segue.destinationViewController
+                as! TaskDetailViewController
+            taskDetailViewController.task = tasks[row]
+            taskDetailViewController.project = project
         }
     }
 }
