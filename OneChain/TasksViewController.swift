@@ -14,12 +14,15 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var project: PFObject!
+    var tasks = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 72
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +35,17 @@ class TasksViewController: UIViewController {
             target: self,
             action: "onNew:"
         )
+
+        tasks = project["tasks"] as! [PFObject]
+        PFObject.fetchAllIfNeededInBackground(tasks) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                self.tasks = objects as! [PFObject]
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,17 +73,20 @@ class TasksViewController: UIViewController {
 extension TasksViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
 
     func tableView(
         tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(
+        let cell = tableView.dequeueReusableCellWithIdentifier(
             "Task Cell",
             forIndexPath: indexPath
-        )
+        ) as! TaskTableViewCell
+
+        cell.task = tasks[indexPath.row]
+        return cell
     }
 }
 
