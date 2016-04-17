@@ -19,6 +19,8 @@
 		1459716B1CC3399A00E15963 /* TaskNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459716A1CC3399A00E15963 /* TaskNoteCell.swift */; };
 		1459716E1CC346DB00E15963 /* TaskDueDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459716D1CC346DB00E15963 /* TaskDueDateCell.swift */; };
 		145971701CC3487B00E15963 /* TaskDueDateEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459716F1CC3487B00E15963 /* TaskDueDateEditViewController.swift */; };
+		145971721CC3526D00E15963 /* TaskOwnerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145971711CC3526D00E15963 /* TaskOwnerEditViewController.swift */; };
+		145971741CC3607300E15963 /* TaskOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145971731CC3607300E15963 /* TaskOwnerCell.swift */; };
 		1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5DF1CB0875100217815 /* MeTableViewController.swift */; };
 		1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */; };
 		1460F5E41CB0CC4800217815 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		1459716A1CC3399A00E15963 /* TaskNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNoteCell.swift; sourceTree = "<group>"; };
 		1459716D1CC346DB00E15963 /* TaskDueDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDueDateCell.swift; sourceTree = "<group>"; };
 		1459716F1CC3487B00E15963 /* TaskDueDateEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDueDateEditViewController.swift; sourceTree = "<group>"; };
+		145971711CC3526D00E15963 /* TaskOwnerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOwnerEditViewController.swift; sourceTree = "<group>"; };
+		145971731CC3607300E15963 /* TaskOwnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOwnerCell.swift; sourceTree = "<group>"; };
 		1460F5DF1CB0875100217815 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				145971681CC3398300E15963 /* TaskTitleCell.swift */,
 				1459716A1CC3399A00E15963 /* TaskNoteCell.swift */,
 				1459716D1CC346DB00E15963 /* TaskDueDateCell.swift */,
+				145971731CC3607300E15963 /* TaskOwnerCell.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */,
 				1459715D1CC3150E00E15963 /* TaskCreateViewController.swift */,
 				1459716F1CC3487B00E15963 /* TaskDueDateEditViewController.swift */,
+				145971711CC3526D00E15963 /* TaskOwnerEditViewController.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -398,8 +404,10 @@
 				145971691CC3398300E15963 /* TaskTitleCell.swift in Sources */,
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
 				14D2CEB21CB34BF000A4ABA6 /* Utils.swift in Sources */,
+				145971741CC3607300E15963 /* TaskOwnerCell.swift in Sources */,
 				1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */,
 				1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */,
+				145971721CC3526D00E15963 /* TaskOwnerEditViewController.swift in Sources */,
 				1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */,
 				1459716B1CC3399A00E15963 /* TaskNoteCell.swift in Sources */,
 				1459716E1CC346DB00E15963 /* TaskDueDateCell.swift in Sources */,

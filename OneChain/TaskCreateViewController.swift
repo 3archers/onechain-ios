@@ -41,6 +41,11 @@ class TaskCreateViewController: UIViewController {
             let dueDateEditViewController = segue.destinationViewController
                 as! TaskDueDateEditViewController
             dueDateEditViewController.task = task
+        } else if segue.identifier == "Owner" {
+            let ownerEditViewController = segue.destinationViewController
+                as! TaskOwnerEditViewController
+            ownerEditViewController.task = task
+            ownerEditViewController.project = project
         }
     }
 
@@ -97,7 +102,8 @@ extension TaskCreateViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier(
                 "Owner Cell",
                 forIndexPath: indexPath
-            )
+            ) as! TaskOwnerCell
+            cell.task = task
             return cell
         case 3:
             let cell = tableView.dequeueReusableCellWithIdentifier(
