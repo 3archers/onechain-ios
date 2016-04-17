@@ -14,6 +14,14 @@
 		14526E4A1CACA14F00BEF7F6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E491CACA14F00BEF7F6 /* SignInViewController.swift */; };
 		14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */; };
 		14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */; };
+		1459715E1CC3150E00E15963 /* TaskCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459715D1CC3150E00E15963 /* TaskCreateViewController.swift */; };
+		145971691CC3398300E15963 /* TaskTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145971681CC3398300E15963 /* TaskTitleCell.swift */; };
+		1459716B1CC3399A00E15963 /* TaskNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459716A1CC3399A00E15963 /* TaskNoteCell.swift */; };
+		1459716E1CC346DB00E15963 /* TaskDueDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459716D1CC346DB00E15963 /* TaskDueDateCell.swift */; };
+		145971701CC3487B00E15963 /* TaskDueDateEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459716F1CC3487B00E15963 /* TaskDueDateEditViewController.swift */; };
+		145971721CC3526D00E15963 /* TaskOwnerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145971711CC3526D00E15963 /* TaskOwnerEditViewController.swift */; };
+		145971741CC3607300E15963 /* TaskOwnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145971731CC3607300E15963 /* TaskOwnerCell.swift */; };
+		145971761CC3664A00E15963 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145971751CC3664A00E15963 /* TaskTableViewCell.swift */; };
 		1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5DF1CB0875100217815 /* MeTableViewController.swift */; };
 		1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */; };
 		1460F5E41CB0CC4800217815 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */; };
@@ -50,6 +58,14 @@
 		14526E491CACA14F00BEF7F6 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		14526E4B1CACA1F500BEF7F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1459715D1CC3150E00E15963 /* TaskCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCreateViewController.swift; sourceTree = "<group>"; };
+		145971681CC3398300E15963 /* TaskTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTitleCell.swift; sourceTree = "<group>"; };
+		1459716A1CC3399A00E15963 /* TaskNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNoteCell.swift; sourceTree = "<group>"; };
+		1459716D1CC346DB00E15963 /* TaskDueDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDueDateCell.swift; sourceTree = "<group>"; };
+		1459716F1CC3487B00E15963 /* TaskDueDateEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDueDateEditViewController.swift; sourceTree = "<group>"; };
+		145971711CC3526D00E15963 /* TaskOwnerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOwnerEditViewController.swift; sourceTree = "<group>"; };
+		145971731CC3607300E15963 /* TaskOwnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskOwnerCell.swift; sourceTree = "<group>"; };
+		145971751CC3664A00E15963 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		1460F5DF1CB0875100217815 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		1460F5E11CB0CB5E00217815 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,11 +156,26 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		1459716C1CC346BB00E15963 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				145971681CC3398300E15963 /* TaskTitleCell.swift */,
+				1459716A1CC3399A00E15963 /* TaskNoteCell.swift */,
+				1459716D1CC346DB00E15963 /* TaskDueDateCell.swift */,
+				145971731CC3607300E15963 /* TaskOwnerCell.swift */,
+				145971751CC3664A00E15963 /* TaskTableViewCell.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
 		1460F5FD1CB1C73200217815 /* Task */ = {
 			isa = PBXGroup;
 			children = (
 				1460F5FE1CB1C75D00217815 /* TasksViewController.swift */,
 				1460F60C1CB1D29000217815 /* TaskDetailViewController.swift */,
+				1459715D1CC3150E00E15963 /* TaskCreateViewController.swift */,
+				1459716F1CC3487B00E15963 /* TaskDueDateEditViewController.swift */,
+				145971711CC3526D00E15963 /* TaskOwnerEditViewController.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -204,6 +235,7 @@
 		146FB48A1CB043A2005B42C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1459716C1CC346BB00E15963 /* Task */,
 				146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */,
 				1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */,
 			);
@@ -357,8 +389,10 @@
 			files = (
 				1460F61A1CB1EBCC00217815 /* ContactSearchViewController.swift in Sources */,
 				1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */,
+				145971701CC3487B00E15963 /* TaskDueDateEditViewController.swift in Sources */,
 				1460F61C1CB1FADD00217815 /* ProfileViewController.swift in Sources */,
 				1460F6041CB1CA5000217815 /* EventsViewController.swift in Sources */,
+				145971761CC3664A00E15963 /* TaskTableViewCell.swift in Sources */,
 				1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */,
 				14526E4C1CACA1F500BEF7F6 /* SignUpViewController.swift in Sources */,
 				1460F60B1CB1CC5400217815 /* ProjectDetailViewController.swift in Sources */,
@@ -371,11 +405,17 @@
 				14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */,
 				1460F5E21CB0CB5E00217815 /* ContactsViewController.swift in Sources */,
 				1460F5FF1CB1C75D00217815 /* TasksViewController.swift in Sources */,
+				145971691CC3398300E15963 /* TaskTitleCell.swift in Sources */,
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
 				14D2CEB21CB34BF000A4ABA6 /* Utils.swift in Sources */,
+				145971741CC3607300E15963 /* TaskOwnerCell.swift in Sources */,
 				1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */,
 				1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */,
+				145971721CC3526D00E15963 /* TaskOwnerEditViewController.swift in Sources */,
 				1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */,
+				1459716B1CC3399A00E15963 /* TaskNoteCell.swift in Sources */,
+				1459716E1CC346DB00E15963 /* TaskDueDateCell.swift in Sources */,
+				1459715E1CC3150E00E15963 /* TaskCreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,20 +1,21 @@
 //
-//  TaskDetailViewController.swift
+//  TaskCreateViewController.swift
 //  OneChain
 //
-//  Created by Xiaofei Long on 4/3/16.
+//  Created by Xiaofei Long on 4/16/16.
 //  Copyright © 2016 3archers. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class TaskDetailViewController: UIViewController {
+class TaskCreateViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
     var project: PFObject!
-    var task: PFObject!
+
+    let task = PFObject(className: "Task")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +30,9 @@ class TaskDetailViewController: UIViewController {
         tableView.reloadData()
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        task.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 
     // MARK: - Navigation
 
@@ -58,9 +48,28 @@ class TaskDetailViewController: UIViewController {
             ownerEditViewController.project = project
         }
     }
+
+    // MARK: - Action
+
+    @IBAction func onCancel(sender: AnyObject) {
+        view.endEditing(true)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func onSubmit(sender: AnyObject) {
+        project.addObject(task, forKey: "tasks")
+        project.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                self.view.endEditing(true)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+    }
 }
 
-extension TaskDetailViewController: UITableViewDataSource {
+extension TaskCreateViewController: UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
@@ -110,7 +119,7 @@ extension TaskDetailViewController: UITableViewDataSource {
     }
 }
 
-extension TaskDetailViewController: UITableViewDelegate {
+extension TaskCreateViewController: UITableViewDelegate {
 
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -125,8 +134,7 @@ extension TaskDetailViewController: UITableViewDelegate {
     }
 }
 
-
-extension TaskDetailViewController: UITextViewDelegate {
+extension TaskCreateViewController: UITextViewDelegate {
 
     func textViewDidChange(textView: UITextView) {
         task["note"] = textView.text

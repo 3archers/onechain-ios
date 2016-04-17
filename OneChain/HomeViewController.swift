@@ -32,6 +32,22 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Project Detail" {
+            let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            let tasksViewController = tabBarController.viewControllers![1] as! TasksViewController
+            tasksViewController.project = projects[row]
+        } else if segue.identifier == "New Project" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let projectCreateViewController = navController.topViewController
+                as! ProjectCreateViewController
+            projectCreateViewController.delegate = self
+        }
+    }
+
     // MARK: - Actions
 
     @IBAction func onSignOut(sender: AnyObject) {
@@ -52,9 +68,6 @@ class HomeViewController: UIViewController {
 
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let objects = objects {
-                for object in objects {
-                    print(object)
-                }
                 self.projects = objects
                 self.tableView.reloadData()
             } else {
@@ -87,4 +100,15 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
 
+}
+
+extension HomeViewController: ProjectCreateViewControllerDelegate {
+
+    func projectCreateViewController(
+        projectCreateViewController: ProjectCreateViewController,
+        didCreateNewProject project: PFObject
+    ) {
+        projects.insert(project, atIndex: 0)
+        tableView.reloadData()
+    }
 }

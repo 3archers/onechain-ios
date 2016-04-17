@@ -72,7 +72,7 @@
                                             <outlet property="membersLabel" destination="qtB-I1-Bya" id="vi7-fL-MhQ"/>
                                             <outlet property="nameLabel" destination="Jvc-fp-RmW" id="FmO-pt-Ls6"/>
                                             <outlet property="statusLabel" destination="qXe-Pa-w7f" id="FdY-3Y-uup"/>
-                                            <segue destination="rmX-5R-igV" kind="push" id="3RN-kV-W9V"/>
+                                            <segue destination="rmX-5R-igV" kind="push" identifier="Project Detail" id="3RN-kV-W9V"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,7 +95,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="Twx-y2-Vlv">
                             <connections>
-                                <segue destination="CzE-Zc-SU8" kind="modal" id="yYU-cE-Bfj"/>
+                                <segue destination="CzE-Zc-SU8" kind="modal" identifier="New Project" id="yYU-cE-Bfj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

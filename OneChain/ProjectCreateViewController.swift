@@ -9,11 +9,21 @@
 import UIKit
 import Parse
 
+@objc protocol ProjectCreateViewControllerDelegate {
+
+    optional func projectCreateViewController(
+        projectCreateViewController: ProjectCreateViewController,
+        didCreateNewProject project: PFObject
+    )
+}
+
 class ProjectCreateViewController: UIViewController {
 
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var projectNameField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+
+    weak var delegate: ProjectCreateViewControllerDelegate?
 
     var contacts = [PFUser]()
     var selected: [Bool] = []
@@ -45,6 +55,10 @@ class ProjectCreateViewController: UIViewController {
             "description": descriptionTextView.text,
             "status": "active",
             "members": selectedContacts,
+            "tasks": [PFObject](),
+            "events": [PFObject](),
+            "posts": [PFObject](),
+            "files": [PFObject](),
             "log": ["@\(PFUser.currentUser()!.username!) created the project."]
         ]
 
@@ -52,6 +66,7 @@ class ProjectCreateViewController: UIViewController {
         project.saveInBackgroundWithBlock{ (success: Bool, error: NSError?) -> Void in
             if success {
                 self.view.endEditing(true)
+                self.delegate?.projectCreateViewController?(self, didCreateNewProject: project)
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print(error?.localizedDescription)
