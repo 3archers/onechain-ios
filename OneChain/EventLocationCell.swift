@@ -13,7 +13,11 @@ class EventLocationCell: UITableViewCell {
 
     @IBOutlet weak var locationField: UITextField!
 
-    var event: PFObject!
+    var event: PFObject! {
+        didSet {
+            locationField.text = event["location"] as? String
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

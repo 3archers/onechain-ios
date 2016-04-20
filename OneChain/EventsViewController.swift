@@ -61,6 +61,12 @@ class EventsViewController: UIViewController {
             let eventCreateViewController = navController.topViewController
                 as! EventCreateViewController
             eventCreateViewController.project = project
+        } else if segue.identifier == "event detail" {
+            let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+            let eventDetailViewController = segue.destinationViewController
+                as! EventDetailViewController
+            eventDetailViewController.event = events[row]
+            eventDetailViewController.project = project
         }
     }
 }

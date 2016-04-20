@@ -13,7 +13,11 @@ class EventTitleCell: UITableViewCell {
 
     @IBOutlet weak var titleField: UITextField!
 
-    var event: PFObject!
+    var event: PFObject! {
+        didSet {
+            titleField.text = event["title"] as? String
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

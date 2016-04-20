@@ -13,7 +13,11 @@ class EventNoteCell: UITableViewCell {
 
     @IBOutlet weak var noteTextView: UITextView!
 
-    var event: PFObject!
+    var event: PFObject! {
+        didSet {
+            noteTextView.text = event["note"] as? String
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
