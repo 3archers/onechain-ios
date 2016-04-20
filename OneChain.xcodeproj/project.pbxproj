@@ -53,6 +53,7 @@
 		146FB48C1CB043BC005B42C1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */; };
 		14D2CEB21CB34BF000A4ABA6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D2CEB11CB34BF000A4ABA6 /* Utils.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
+		C69EABA51CC757F000F4ECA6 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69EABA41CC757F000F4ECA6 /* MemberCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4547B1A301BAACFD83DD89 /* Pods-OneChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.debug.xcconfig"; sourceTree = "<group>"; };
 		BED12B4D3AE4FE368B0FFF90 /* Pods-OneChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.release.xcconfig"; sourceTree = "<group>"; };
+		C69EABA41CC757F000F4ECA6 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 		146FB48A1CB043A2005B42C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C69EABA31CC757DF00F4ECA6 /* Project */,
 				140497E61CC72625001D8278 /* Event */,
 				1459716C1CC346BB00E15963 /* Task */,
 				146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */,
@@ -277,6 +280,14 @@
 				2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C69EABA31CC757DF00F4ECA6 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				C69EABA41CC757F000F4ECA6 /* MemberCollectionViewCell.swift */,
+			);
+			name = Project;
 			sourceTree = "<group>";
 		};
 		DDFBD3DCA24295A8821C877F /* Pods */ = {
@@ -424,6 +435,7 @@
 				1460F6041CB1CA5000217815 /* EventsViewController.swift in Sources */,
 				145971761CC3664A00E15963 /* TaskTableViewCell.swift in Sources */,
 				140497EA1CC7264F001D8278 /* EventNoteCell.swift in Sources */,
+				C69EABA51CC757F000F4ECA6 /* MemberCollectionViewCell.swift in Sources */,
 				140497E81CC72641001D8278 /* EventTitleCell.swift in Sources */,
 				140497EC1CC7265E001D8278 /* EventLocationCell.swift in Sources */,
 				1460F6111CB1D4DC00217815 /* PostDetailViewController.swift in Sources */,
