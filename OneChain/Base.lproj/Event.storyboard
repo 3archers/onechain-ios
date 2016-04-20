@@ -166,11 +166,11 @@
                                             <outlet property="locationField" destination="zFg-RF-dJx" id="79h-Ui-lpI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Time Cell" id="K2Y-sZ-bUf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Time Cell" id="K2Y-sZ-bUf" customClass="EventTimeCell" customModule="OneChain" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="280" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K2Y-sZ-bUf" id="5tb-Ia-8kD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-aa-Mme">
@@ -185,6 +185,10 @@
                                                 <constraint firstItem="ko2-aa-Mme" firstAttribute="centerY" secondItem="5tb-Ia-8kD" secondAttribute="centerY" id="pnY-ef-vkg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="ko2-aa-Mme" id="fwt-2E-LUb"/>
+                                            <segue destination="iAs-1B-cOe" kind="push" identifier="Time" id="SFe-Tq-nZs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -217,6 +221,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRF-ad-rDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="-400"/>
+        </scene>
+        <!--Event Time Edit View Controller-->
+        <scene sceneID="qDe-k6-7Cf">
+            <objects>
+                <viewController id="iAs-1B-cOe" customClass="EventTimeEditViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sCn-t9-c3i"/>
+                        <viewControllerLayoutGuide type="bottom" id="dGK-65-WWe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5t-KJ-MNM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uaj-N2-xOG">
+                                <rect key="frame" x="0.0" y="64" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="482816146.78718299">
+                                    <!--2016-04-20 03:35:46 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7jx-Dv-J0C"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Uaj-N2-xOG" id="Gnu-cF-FUQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ase-io-oSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200" y="-400"/>
         </scene>
         <!--Event Detail-->
         <scene sceneID="odX-6K-JtY">

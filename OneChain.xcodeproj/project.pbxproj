@@ -11,6 +11,8 @@
 		140497E81CC72641001D8278 /* EventTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497E71CC72641001D8278 /* EventTitleCell.swift */; };
 		140497EA1CC7264F001D8278 /* EventNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497E91CC7264F001D8278 /* EventNoteCell.swift */; };
 		140497EC1CC7265E001D8278 /* EventLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497EB1CC7265E001D8278 /* EventLocationCell.swift */; };
+		140497EE1CC72CB4001D8278 /* EventTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497ED1CC72CB4001D8278 /* EventTimeCell.swift */; };
+		140497F41CC7313D001D8278 /* EventTimeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */; };
 		14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E361CAC82F800BEF7F6 /* AppDelegate.swift */; };
 		14526E3C1CAC82F800BEF7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3A1CAC82F800BEF7F6 /* Main.storyboard */; };
 		14526E3E1CAC82F800BEF7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3D1CAC82F800BEF7F6 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		140497E71CC72641001D8278 /* EventTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTitleCell.swift; sourceTree = "<group>"; };
 		140497E91CC7264F001D8278 /* EventNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNoteCell.swift; sourceTree = "<group>"; };
 		140497EB1CC7265E001D8278 /* EventLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
+		140497ED1CC72CB4001D8278 /* EventTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeCell.swift; sourceTree = "<group>"; };
+		140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeEditViewController.swift; sourceTree = "<group>"; };
 		14526E331CAC82F800BEF7F6 /* OneChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14526E361CAC82F800BEF7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14526E3B1CAC82F800BEF7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				140497E71CC72641001D8278 /* EventTitleCell.swift */,
 				140497E91CC7264F001D8278 /* EventNoteCell.swift */,
 				140497EB1CC7265E001D8278 /* EventLocationCell.swift */,
+				140497ED1CC72CB4001D8278 /* EventTimeCell.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				1460F6031CB1CA5000217815 /* EventsViewController.swift */,
 				1460F60E1CB1D49900217815 /* EventDetailViewController.swift */,
 				140497E41CC71235001D8278 /* EventCreateViewController.swift */,
+				140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -436,9 +442,11 @@
 				140497E51CC71235001D8278 /* EventCreateViewController.swift in Sources */,
 				1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */,
 				145971721CC3526D00E15963 /* TaskOwnerEditViewController.swift in Sources */,
+				140497EE1CC72CB4001D8278 /* EventTimeCell.swift in Sources */,
 				1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */,
 				1459716B1CC3399A00E15963 /* TaskNoteCell.swift in Sources */,
 				1459716E1CC346DB00E15963 /* TaskDueDateCell.swift in Sources */,
+				140497F41CC7313D001D8278 /* EventTimeEditViewController.swift in Sources */,
 				1459715E1CC3150E00E15963 /* TaskCreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

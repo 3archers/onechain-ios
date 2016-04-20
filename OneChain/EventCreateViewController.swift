@@ -25,8 +25,25 @@ class EventCreateViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Time" {
+            let timeEditViewController = segue.destinationViewController
+                as! EventTimeEditViewController
+            let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+            timeEditViewController.timeField = row == 0 ? "start_time" : "end_time"
+            timeEditViewController.event = event
+        }
     }
 
     // MARK: - Actions
@@ -90,7 +107,9 @@ extension EventCreateViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier(
                 "Time Cell",
                 forIndexPath: indexPath
-            )
+            ) as! EventTimeCell
+            cell.type = indexPath.row == 0 ? .Start : .End
+            cell.event = event
             return cell
         default:
             return UITableViewCell()
