@@ -54,6 +54,7 @@
 		14D2CEB21CB34BF000A4ABA6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D2CEB11CB34BF000A4ABA6 /* Utils.swift */; };
 		B7423171C7DEE5FD28F8BA58 /* Pods_OneChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABF5405EA34E2D3E64F6239 /* Pods_OneChain.framework */; };
 		C69EABA51CC757F000F4ECA6 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69EABA41CC757F000F4ECA6 /* MemberCollectionViewCell.swift */; };
+		C69EABA71CC7642000F4ECA6 /* ProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69EABA61CC7642000F4ECA6 /* ProjectEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		7B4547B1A301BAACFD83DD89 /* Pods-OneChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.debug.xcconfig"; sourceTree = "<group>"; };
 		BED12B4D3AE4FE368B0FFF90 /* Pods-OneChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneChain.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneChain/Pods-OneChain.release.xcconfig"; sourceTree = "<group>"; };
 		C69EABA41CC757F000F4ECA6 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		C69EABA61CC7642000F4ECA6 /* ProjectEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				14526E4D1CACA8D800BEF7F6 /* HomeViewController.swift */,
 				146FB4881CB038CC005B42C1 /* ProjectCreateViewController.swift */,
 				1460F60A1CB1CC5400217815 /* ProjectDetailViewController.swift */,
+				C69EABA61CC7642000F4ECA6 /* ProjectEditViewController.swift */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				1460F60F1CB1D49900217815 /* EventDetailViewController.swift in Sources */,
 				145971721CC3526D00E15963 /* TaskOwnerEditViewController.swift in Sources */,
 				140497EE1CC72CB4001D8278 /* EventTimeCell.swift in Sources */,
+				C69EABA71CC7642000F4ECA6 /* ProjectEditViewController.swift in Sources */,
 				1460F5E01CB0875100217815 /* MeTableViewController.swift in Sources */,
 				1459716B1CC3399A00E15963 /* TaskNoteCell.swift in Sources */,
 				1459716E1CC346DB00E15963 /* TaskDueDateCell.swift in Sources */,
