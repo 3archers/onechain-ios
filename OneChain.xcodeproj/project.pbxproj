@@ -13,6 +13,7 @@
 		140497EC1CC7265E001D8278 /* EventLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497EB1CC7265E001D8278 /* EventLocationCell.swift */; };
 		140497EE1CC72CB4001D8278 /* EventTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497ED1CC72CB4001D8278 /* EventTimeCell.swift */; };
 		140497F41CC7313D001D8278 /* EventTimeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */; };
+		140497F61CC73692001D8278 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F51CC73692001D8278 /* EventTableViewCell.swift */; };
 		14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E361CAC82F800BEF7F6 /* AppDelegate.swift */; };
 		14526E3C1CAC82F800BEF7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3A1CAC82F800BEF7F6 /* Main.storyboard */; };
 		14526E3E1CAC82F800BEF7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3D1CAC82F800BEF7F6 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		140497EB1CC7265E001D8278 /* EventLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
 		140497ED1CC72CB4001D8278 /* EventTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeCell.swift; sourceTree = "<group>"; };
 		140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeEditViewController.swift; sourceTree = "<group>"; };
+		140497F51CC73692001D8278 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		14526E331CAC82F800BEF7F6 /* OneChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14526E361CAC82F800BEF7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14526E3B1CAC82F800BEF7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				140497E91CC7264F001D8278 /* EventNoteCell.swift */,
 				140497EB1CC7265E001D8278 /* EventLocationCell.swift */,
 				140497ED1CC72CB4001D8278 /* EventTimeCell.swift */,
+				140497F51CC73692001D8278 /* EventTableViewCell.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140497F61CC73692001D8278 /* EventTableViewCell.swift in Sources */,
 				1460F61A1CB1EBCC00217815 /* ContactSearchViewController.swift in Sources */,
 				1460F6061CB1CB0A00217815 /* PostsViewController.swift in Sources */,
 				145971701CC3487B00E15963 /* TaskDueDateEditViewController.swift in Sources */,

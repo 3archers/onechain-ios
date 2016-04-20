@@ -14,12 +14,14 @@ class EventsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var project: PFObject!
+    var events = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 65
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +34,17 @@ class EventsViewController: UIViewController {
             target: self,
             action: "onNew:"
         )
+
+        let events = project["events"] as! [PFObject]
+        PFObject.fetchAllIfNeededInBackground(events) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                self.events = objects as! [PFObject]
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,17 +68,20 @@ class EventsViewController: UIViewController {
 extension EventsViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return events.count
     }
 
     func tableView(
         tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(
+        let cell = tableView.dequeueReusableCellWithIdentifier(
             "Event Cell",
             forIndexPath: indexPath
-        )
+        ) as! EventTableViewCell
+
+        cell.event = events[indexPath.row]
+        return cell
     }
 }
 

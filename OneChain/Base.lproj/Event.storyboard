@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-IF-esW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-IF-esW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Event Cell" id="Vkc-36-0tA">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Event Cell" rowHeight="65" id="Vkc-36-0tA" customClass="EventTableViewCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vkc-36-0tA" id="qIZ-hL-6rb">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrX-oF-xTX">
@@ -34,13 +34,47 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCm-tb-qZ5">
+                                                    <rect key="frame" x="12" y="35" width="56" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End:   01/22 12:55" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKs-sK-Rje">
+                                                    <rect key="frame" x="183" y="35" width="125" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="125" id="mxm-3s-GAz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start: 01/22 10:55" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-Op-vXu">
+                                                    <rect key="frame" x="183" y="15" width="125" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="125" id="1sJ-C4-TPA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YrX-oF-xTX" firstAttribute="top" secondItem="qIZ-hL-6rb" secondAttribute="top" constant="12" id="3E0-0l-MR2"/>
+                                                <constraint firstAttribute="bottom" secondItem="sCm-tb-qZ5" secondAttribute="bottom" constant="12" id="7Fp-Ho-WKP"/>
+                                                <constraint firstItem="vKs-sK-Rje" firstAttribute="leading" secondItem="DPm-Op-vXu" secondAttribute="leading" id="Cv2-Oz-KVQ"/>
+                                                <constraint firstItem="vKs-sK-Rje" firstAttribute="baseline" secondItem="sCm-tb-qZ5" secondAttribute="baseline" id="Qaj-X7-hZg"/>
                                                 <constraint firstItem="YrX-oF-xTX" firstAttribute="leading" secondItem="qIZ-hL-6rb" secondAttribute="leading" constant="12" id="d9U-0M-m7o"/>
+                                                <constraint firstItem="DPm-Op-vXu" firstAttribute="baseline" secondItem="YrX-oF-xTX" secondAttribute="baseline" id="glM-Io-5ZE"/>
+                                                <constraint firstItem="sCm-tb-qZ5" firstAttribute="leading" secondItem="YrX-oF-xTX" secondAttribute="leading" id="iN9-es-cHd"/>
+                                                <constraint firstAttribute="trailing" secondItem="DPm-Op-vXu" secondAttribute="trailing" constant="12" id="lFF-VL-raT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="endTimeLabel" destination="vKs-sK-Rje" id="z0b-gB-Vaf"/>
+                                            <outlet property="locationLabel" destination="sCm-tb-qZ5" id="pO6-DG-nZz"/>
+                                            <outlet property="startTimeLabel" destination="DPm-Op-vXu" id="HJm-9j-ujd"/>
+                                            <outlet property="titleLabel" destination="YrX-oF-xTX" id="Fva-7z-gAB"/>
                                             <segue destination="BMX-oz-1Vn" kind="push" id="3Pc-2r-nAB"/>
                                         </connections>
                                     </tableViewCell>
