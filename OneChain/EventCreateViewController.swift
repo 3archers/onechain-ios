@@ -1,20 +1,21 @@
 //
-//  EventDetailViewController.swift
+//  EventCreateViewController.swift
 //  OneChain
 //
-//  Created by Xiaofei Long on 4/3/16.
+//  Created by Xiaofei Long on 4/19/16.
 //  Copyright © 2016 3archers. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class EventDetailViewController: UIViewController {
+class EventCreateViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
     var project: PFObject!
-    var event: PFObject!
+
+    let event = PFObject(className: "Event")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +28,6 @@ class EventDetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-    }
-
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        event.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,9 +45,28 @@ class EventDetailViewController: UIViewController {
             timeEditViewController.event = event
         }
     }
+
+    // MARK: - Actions
+
+    @IBAction func onCancel(sender: AnyObject) {
+        view.endEditing(true)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func onSubmit(sender: AnyObject) {
+        project.addObject(event, forKey: "events")
+        project.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                self.view.endEditing(true)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+    }
 }
 
-extension EventDetailViewController: UITableViewDataSource {
+extension EventCreateViewController: UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
@@ -107,7 +117,7 @@ extension EventDetailViewController: UITableViewDataSource {
     }
 }
 
-extension EventDetailViewController: UITableViewDelegate {
+extension EventCreateViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
@@ -121,7 +131,7 @@ extension EventDetailViewController: UITableViewDelegate {
     }
 }
 
-extension EventDetailViewController: UITextViewDelegate {
+extension EventCreateViewController: UITextViewDelegate {
 
     func textViewDidChange(textView: UITextView) {
         event["note"] = textView.text
