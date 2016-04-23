@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class FilesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    var project: PFObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +26,29 @@ class FilesViewController: UIViewController {
         super.viewWillAppear(animated)
 
         tabBarController?.navigationItem.title = "Files"
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "New",
+            style: .Plain,
+            target: self,
+            action: "onNew:"
+        )
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "New File" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let fileCreateViewController = navController.topViewController
+                as! FileCreateViewController
+            fileCreateViewController.project = project
+        }
+    }
+
+    func onNew(sender: AnyObject) {
+        performSegueWithIdentifier("New File", sender: self)
     }
 }
 
