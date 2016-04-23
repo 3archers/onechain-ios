@@ -13,13 +13,22 @@ class FilesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    let headerViewIdentifier = "header view"
+
     var project: PFObject!
+    var files = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 325
+
+        tableView.registerClass(
+            FileTableViewHeaderFooterView.self,
+            forHeaderFooterViewReuseIdentifier: headerViewIdentifier
+        )
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +41,16 @@ class FilesViewController: UIViewController {
             target: self,
             action: "onNew:"
         )
+
+        PFObject.fetchAllIfNeededInBackground((project["files"] as! [PFObject])) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                self.files = objects as! [PFObject]
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,18 +73,37 @@ class FilesViewController: UIViewController {
 
 extension FilesViewController: UITableViewDataSource {
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return files.count
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
 
     func tableView(
         tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(
+        let cell = tableView.dequeueReusableCellWithIdentifier(
             "File Cell",
             forIndexPath: indexPath
-        )
+        ) as! FileTableViewCell
+
+        cell.file = files[indexPath.section]
+        return cell
+    }
+
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView =
+            tableView.dequeueReusableHeaderFooterViewWithIdentifier(headerViewIdentifier)!
+            as! FileTableViewHeaderFooterView
+        headerView.file = files[section]
+        return headerView
+    }
+
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
 }
 

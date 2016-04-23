@@ -45,6 +45,7 @@ class FileCreateViewController: UIViewController {
 
     @IBAction func onSubmit(sender: AnyObject) {
         if imageView.image != nil && !titleField.text!.isEmpty {
+            file["author"] = PFUser.currentUser()
             file["title"] = titleField.text
             file["media"] = Utils.getPFFileFromImage(imageView.image)
             project.addObject(file, forKey: "files")
