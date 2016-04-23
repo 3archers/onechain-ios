@@ -19,6 +19,10 @@ class PostCreateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        contentTextView.delegate = self
+        contentTextView.text = "Content"
+        contentTextView.textColor = UIColor(white: 0, alpha: 0.25)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +50,23 @@ class PostCreateViewController: UIViewController {
             } else {
                 print(error?.localizedDescription)
             }
+        }
+    }
+}
+
+extension PostCreateViewController: UITextViewDelegate {
+
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor != UIColor.blackColor() {
+            textView.text = ""
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            contentTextView.text = "Content"
+            contentTextView.textColor = UIColor(white: 0, alpha: 0.25)
         }
     }
 }
