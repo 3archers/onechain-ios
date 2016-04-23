@@ -16,6 +16,7 @@
 		140497F61CC73692001D8278 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F51CC73692001D8278 /* EventTableViewCell.swift */; };
 		140497F81CCB12E4001D8278 /* PostCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F71CCB12E4001D8278 /* PostCreateViewController.swift */; };
 		140497FB1CCB1C06001D8278 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497FA1CCB1C06001D8278 /* PostTableViewCell.swift */; };
+		140497FD1CCB35D2001D8278 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497FC1CCB35D2001D8278 /* CommentTableViewCell.swift */; };
 		14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E361CAC82F800BEF7F6 /* AppDelegate.swift */; };
 		14526E3C1CAC82F800BEF7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3A1CAC82F800BEF7F6 /* Main.storyboard */; };
 		14526E3E1CAC82F800BEF7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3D1CAC82F800BEF7F6 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		140497F51CC73692001D8278 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		140497F71CCB12E4001D8278 /* PostCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCreateViewController.swift; sourceTree = "<group>"; };
 		140497FA1CCB1C06001D8278 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		140497FC1CCB35D2001D8278 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		14526E331CAC82F800BEF7F6 /* OneChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14526E361CAC82F800BEF7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14526E3B1CAC82F800BEF7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				140497FA1CCB1C06001D8278 /* PostTableViewCell.swift */,
+				140497FC1CCB35D2001D8278 /* CommentTableViewCell.swift */,
 			);
 			name = Post;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				1460F5FF1CB1C75D00217815 /* TasksViewController.swift in Sources */,
 				145971691CC3398300E15963 /* TaskTitleCell.swift in Sources */,
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
+				140497FD1CCB35D2001D8278 /* CommentTableViewCell.swift in Sources */,
 				140497F81CCB12E4001D8278 /* PostCreateViewController.swift in Sources */,
 				14D2CEB21CB34BF000A4ABA6 /* Utils.swift in Sources */,
 				140497FB1CCB1C06001D8278 /* PostTableViewCell.swift in Sources */,

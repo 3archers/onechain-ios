@@ -31,6 +31,8 @@ class PostDetailViewController: UIViewController {
 
         commentsTableView.dataSource = self
         commentsTableView.delegate = self
+        commentsTableView.rowHeight = UITableViewAutomaticDimension
+        commentsTableView.estimatedRowHeight = 60
 
         PFObject.fetchAllIfNeededInBackground((post["comments"] as! [PFObject])) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -75,10 +77,13 @@ extension PostDetailViewController: UITableViewDataSource {
         tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(
+        let cell = tableView.dequeueReusableCellWithIdentifier(
             "Comment Cell",
             forIndexPath: indexPath
-        )
+        ) as! CommentTableViewCell
+
+        cell.comment = comments[indexPath.row]
+        return cell
     }
 }
 

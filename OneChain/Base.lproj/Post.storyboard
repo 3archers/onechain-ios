@@ -177,25 +177,45 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-iS-O72">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-iS-O72">
                                 <rect key="frame" x="0.0" y="278" width="320" height="241"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Comment Cell" id="mrc-uq-ERg">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Comment Cell" rowHeight="75" id="mrc-uq-ERg" customClass="CommentTableViewCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mrc-uq-ERg" id="U0y-NL-bdf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2l-4B-dTt">
-                                                    <rect key="frame" x="20" y="11" width="75" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2l-4B-dTt">
+                                                    <rect key="frame" x="56" y="8" width="256" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-ho-M1m">
+                                                    <rect key="frame" x="12" y="8" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="Ctd-Yf-cph"/>
+                                                        <constraint firstAttribute="height" constant="36" id="tXd-m8-V74"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i2l-4B-dTt" firstAttribute="leading" secondItem="rK9-ho-M1m" secondAttribute="trailing" constant="8" id="9q4-1d-VEc"/>
+                                                <constraint firstItem="i2l-4B-dTt" firstAttribute="top" secondItem="rK9-ho-M1m" secondAttribute="top" id="Hfg-hT-6tN"/>
+                                                <constraint firstItem="rK9-ho-M1m" firstAttribute="top" secondItem="U0y-NL-bdf" secondAttribute="top" constant="8" id="Kaa-hb-PFY"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i2l-4B-dTt" secondAttribute="bottom" constant="8" id="TrZ-3s-jVo"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rK9-ho-M1m" secondAttribute="bottom" constant="8" id="Zh7-EC-Tpe"/>
+                                                <constraint firstAttribute="trailing" secondItem="i2l-4B-dTt" secondAttribute="trailing" constant="8" id="aXz-Nw-FhM"/>
+                                                <constraint firstItem="rK9-ho-M1m" firstAttribute="leading" secondItem="U0y-NL-bdf" secondAttribute="leading" constant="12" id="zmB-ck-l7L"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="i2l-4B-dTt" id="nva-qB-yBx"/>
+                                            <outlet property="profileImageView" destination="rK9-ho-M1m" id="oG6-yA-zsu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
