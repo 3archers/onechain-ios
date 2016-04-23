@@ -228,7 +228,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="S0W-rn-CnQ">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="hwA-bu-CwF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hwA-bu-CwF">
                             <connections>
                                 <segue destination="ltT-Nq-5Tc" kind="modal" id="RpW-Rc-qSk"/>
                             </connections>

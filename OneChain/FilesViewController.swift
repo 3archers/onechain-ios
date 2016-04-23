@@ -36,8 +36,7 @@ class FilesViewController: UIViewController {
 
         tabBarController?.navigationItem.title = "Files"
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "New",
-            style: .Plain,
+            barButtonSystemItem: UIBarButtonSystemItem.Add,
             target: self,
             action: "onNew:"
         )

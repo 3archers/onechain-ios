@@ -29,8 +29,7 @@ class EventsViewController: UIViewController {
 
         tabBarController?.navigationItem.title = "Events"
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "New",
-            style: .Plain,
+            barButtonSystemItem: UIBarButtonSystemItem.Add,
             target: self,
             action: "onNew:"
         )

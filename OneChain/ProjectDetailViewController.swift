@@ -23,10 +23,10 @@ class ProjectDetailViewController: UIViewController {
 
         tabBarController?.navigationItem.title = "Project Detail"
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Edit",
-            style: .Plain,
+            barButtonSystemItem: UIBarButtonSystemItem.Edit,
             target: self,
-            action: "onEdit:")
+            action: "onEdit:"
+        )
 
         collectionView.delegate = self
         collectionView.dataSource = self

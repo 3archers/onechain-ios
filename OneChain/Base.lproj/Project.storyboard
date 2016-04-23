@@ -88,12 +88,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="OneChain" id="acF-10-usB">
                         <barButtonItem key="backBarButtonItem" title=" " id="2jT-40-mcf"/>
-                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="OJk-AJ-lFe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="OJk-AJ-lFe">
                             <connections>
                                 <action selector="onSignOut:" destination="BYZ-38-t0r" id="iUQ-Dq-8TZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="New" id="Twx-y2-Vlv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Twx-y2-Vlv">
                             <connections>
                                 <segue destination="CzE-Zc-SU8" kind="modal" identifier="New Project" id="yYU-cE-Bfj"/>
                             </connections>
