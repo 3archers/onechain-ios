@@ -15,6 +15,8 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var commentsTableView: UITableView!
 
+    @IBOutlet weak var commentField: UITextField!
+
     var post: PFObject!
     var comments = [PFObject]()
 
@@ -29,10 +31,37 @@ class PostDetailViewController: UIViewController {
 
         commentsTableView.dataSource = self
         commentsTableView.delegate = self
+
+        PFObject.fetchAllIfNeededInBackground((post["comments"] as! [PFObject])) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                self.comments = objects as! [PFObject]
+                self.commentsTableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    @IBAction func onCommentSubmit(sender: AnyObject) {
+        let comment = PFObject(className: "Comment")
+        comment["content"] = commentField.text
+        comment["author"] = PFUser.currentUser()
+        post.addObject(comment, forKey: "comments")
+        post.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                self.commentField.text = ""
+                self.commentField.resignFirstResponder()
+                self.comments.insert(comment, atIndex: 0)
+                self.commentsTableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 }
 
