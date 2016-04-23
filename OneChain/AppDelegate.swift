@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?
     ) -> Bool {
+        IQKeyboardManager.sharedManager().enable = true
+
         Parse.initializeWithConfiguration(
             ParseClientConfiguration(block: { (config: ParseMutableClientConfiguration) -> Void in
                 config.applicationId = "OneChain"

@@ -89,7 +89,7 @@
                             <constraint firstItem="fyx-IF-esW" firstAttribute="leading" secondItem="D7E-Wm-0nH" secondAttribute="leading" id="dSf-xu-ccy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" id="dST-PZ-fDa"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="EventsTab" id="dST-PZ-fDa"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -448,6 +448,9 @@
             <point key="canvasLocation" x="200" y="-400"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="EventsTab" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LRL-BS-zr2"/>
     </inferredMetricsTieBreakers>
