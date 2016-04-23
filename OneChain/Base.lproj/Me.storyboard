@@ -245,7 +245,7 @@
         <!--Profile-->
         <scene sceneID="G8t-o6-0vb">
             <objects>
-                <viewController id="AJf-wT-Cio" customClass="ProfileViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="AJf-wT-Cio" customClass="ProfileViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z33-ip-PW0"/>
                         <viewControllerLayoutGuide type="bottom" id="cK5-vd-Dbu"/>

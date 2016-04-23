@@ -107,6 +107,16 @@
             </objects>
             <point key="canvasLocation" x="1700" y="-100"/>
         </scene>
+        <!--ProfileViewController-->
+        <scene sceneID="xPi-Qh-akO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Me" referencedIdentifier="ProfileViewController" id="HIK-Sr-DF3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="516-la-Qec"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9el-Lm-IYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="1200"/>
+        </scene>
         <!--Home-->
         <scene sceneID="4Pi-jY-ryJ">
             <objects>
@@ -167,6 +177,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="Kzc-Pq-zvL" id="wXu-Tg-xDp"/>
                                             <outlet property="profileImageView" destination="iHZ-uY-SgJ" id="HdV-dX-m6K"/>
+                                            <segue destination="HIK-Sr-DF3" kind="push" identifier="Profile" id="mvm-8B-JzU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -454,7 +465,9 @@
         <scene sceneID="xyl-GM-qXH">
             <objects>
                 <tabBarController hidesBottomBarWhenPushed="YES" id="rmX-5R-igV" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zgI-hz-tA4"/>
+                    <navigationItem key="navigationItem" id="zgI-hz-tA4">
+                        <barButtonItem key="backBarButtonItem" title=" " id="At5-qp-VGl"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NUc-T1-h2z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
