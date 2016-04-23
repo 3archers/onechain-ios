@@ -402,9 +402,11 @@
                     <tabBarItem key="tabBarItem" title="Me" image="MeTab" id="zMn-B1-ufe"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NBk-ja-iF0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="NBk-ja-iF0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -420,9 +422,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ltT-Nq-5Tc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VUy-Yx-Exr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VUy-Yx-Exr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -438,6 +442,6 @@
         <image name="MeTab" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Keq-wK-2RH"/>
+        <segue reference="feM-wd-G5Z"/>
     </inferredMetricsTieBreakers>
 </document>

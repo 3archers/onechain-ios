@@ -448,9 +448,11 @@
                     <tabBarItem key="tabBarItem" title="Home" image="HomeTab" id="vM5-Hf-iiC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zif-cT-f1o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="zif-cT-f1o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -490,9 +492,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CzE-Zc-SU8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HWj-Z5-7HJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="HWj-Z5-7HJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -548,9 +552,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oF3-iE-XRa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vZv-8z-Syg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="vZv-8z-Syg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
