@@ -48,6 +48,9 @@ class HomeViewController: UIViewController {
 
             let eventsViewController = tabBarController.viewControllers![2] as! EventsViewController
             eventsViewController.project = projects[row]
+
+            let postsViewController = tabBarController.viewControllers![3] as! PostsViewController
+            postsViewController.project = projects[row]
         } else if segue.identifier == "New Project" {
             let navController = segue.destinationViewController as! UINavigationController
             let projectCreateViewController = navController.topViewController
