@@ -76,7 +76,7 @@
                             <constraint firstAttribute="trailing" secondItem="iDE-JQ-DzA" secondAttribute="trailing" id="daY-TQ-gTn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" id="ksc-Kd-mDj"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="TasksTab" id="ksc-Kd-mDj"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -496,6 +496,9 @@
             <point key="canvasLocation" x="200" y="-400"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TasksTab" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jsc-mC-DD4"/>
         <segue reference="dqI-0a-wES"/>

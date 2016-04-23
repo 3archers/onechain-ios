@@ -399,7 +399,7 @@
         <scene sceneID="DXP-P4-qsT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8hs-DZ-Te1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="zMn-B1-ufe"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="MeTab" id="zMn-B1-ufe"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NBk-ja-iF0">
@@ -434,6 +434,9 @@
             <point key="canvasLocation" x="1200" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MeTab" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Keq-wK-2RH"/>
     </inferredMetricsTieBreakers>
