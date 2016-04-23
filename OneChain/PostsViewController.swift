@@ -14,12 +14,14 @@ class PostsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var project: PFObject!
+    var posts = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 65
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +34,16 @@ class PostsViewController: UIViewController {
             target: self,
             action: "onNew:"
         )
+
+        PFObject.fetchAllIfNeededInBackground((project["posts"] as! [PFObject])) {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                self.posts = objects as! [PFObject]
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,17 +69,20 @@ class PostsViewController: UIViewController {
 extension PostsViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
 
     func tableView(
         tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(
+        let cell = tableView.dequeueReusableCellWithIdentifier(
             "Post Cell",
             forIndexPath: indexPath
-        )
+        ) as! PostTableViewCell
+
+        cell.post = posts[indexPath.row]
+        return cell
     }
 }
 

@@ -15,6 +15,7 @@
 		140497F41CC7313D001D8278 /* EventTimeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */; };
 		140497F61CC73692001D8278 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F51CC73692001D8278 /* EventTableViewCell.swift */; };
 		140497F81CCB12E4001D8278 /* PostCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497F71CCB12E4001D8278 /* PostCreateViewController.swift */; };
+		140497FB1CCB1C06001D8278 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140497FA1CCB1C06001D8278 /* PostTableViewCell.swift */; };
 		14526E371CAC82F800BEF7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14526E361CAC82F800BEF7F6 /* AppDelegate.swift */; };
 		14526E3C1CAC82F800BEF7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3A1CAC82F800BEF7F6 /* Main.storyboard */; };
 		14526E3E1CAC82F800BEF7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14526E3D1CAC82F800BEF7F6 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		140497F31CC7313D001D8278 /* EventTimeEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeEditViewController.swift; sourceTree = "<group>"; };
 		140497F51CC73692001D8278 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		140497F71CCB12E4001D8278 /* PostCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCreateViewController.swift; sourceTree = "<group>"; };
+		140497FA1CCB1C06001D8278 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		14526E331CAC82F800BEF7F6 /* OneChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14526E361CAC82F800BEF7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14526E3B1CAC82F800BEF7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 				140497F51CC73692001D8278 /* EventTableViewCell.swift */,
 			);
 			name = Event;
+			sourceTree = "<group>";
+		};
+		140497F91CCB1BE9001D8278 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				140497FA1CCB1C06001D8278 /* PostTableViewCell.swift */,
+			);
+			name = Post;
 			sourceTree = "<group>";
 		};
 		14526E2A1CAC82F800BEF7F6 = {
@@ -271,6 +281,7 @@
 		146FB48A1CB043A2005B42C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				140497F91CCB1BE9001D8278 /* Post */,
 				C69EABA31CC757DF00F4ECA6 /* Project */,
 				140497E61CC72625001D8278 /* Event */,
 				1459716C1CC346BB00E15963 /* Task */,
@@ -460,6 +471,7 @@
 				14526E4E1CACA8D800BEF7F6 /* HomeViewController.swift in Sources */,
 				140497F81CCB12E4001D8278 /* PostCreateViewController.swift in Sources */,
 				14D2CEB21CB34BF000A4ABA6 /* Utils.swift in Sources */,
+				140497FB1CCB1C06001D8278 /* PostTableViewCell.swift in Sources */,
 				145971741CC3607300E15963 /* TaskOwnerCell.swift in Sources */,
 				1460F6131CB1D4F000217815 /* FileDetailViewController.swift in Sources */,
 				140497E51CC71235001D8278 /* EventCreateViewController.swift in Sources */,
