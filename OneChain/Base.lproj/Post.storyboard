@@ -62,7 +62,7 @@
                                             <outlet property="commentCountLabel" destination="lMl-8v-y4Y" id="e2v-jJ-zRg"/>
                                             <outlet property="profileImageView" destination="Bvm-5I-O6f" id="XvG-0O-Rmv"/>
                                             <outlet property="titleLabel" destination="8Fe-Hu-MSD" id="DEI-ue-6lH"/>
-                                            <segue destination="jYP-V5-EpH" kind="push" id="Qhh-IZ-5pv"/>
+                                            <segue destination="jYP-V5-EpH" kind="push" identifier="Detail" id="Qhh-IZ-5pv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,9 +156,72 @@
                     <view key="view" contentMode="scaleToFill" id="FvF-cO-CCi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeh-tL-hFm">
+                                <rect key="frame" x="20" y="84" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rOy-V7-Cbh">
+                                <rect key="frame" x="16" y="125" width="288" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="1BE-Zc-ooh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CI-9i-a3w">
+                                <rect key="frame" x="20" y="265" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-iS-O72">
+                                <rect key="frame" x="0.0" y="294" width="320" height="274"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Comment Cell" id="mrc-uq-ERg">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mrc-uq-ERg" id="U0y-NL-bdf">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2l-4B-dTt">
+                                                    <rect key="frame" x="20" y="11" width="75" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eeh-tL-hFm" firstAttribute="centerX" secondItem="FvF-cO-CCi" secondAttribute="centerX" id="9rz-ni-DQB"/>
+                            <constraint firstItem="vmu-iS-O72" firstAttribute="leading" secondItem="FvF-cO-CCi" secondAttribute="leading" id="Dhb-Ri-U35"/>
+                            <constraint firstItem="rOy-V7-Cbh" firstAttribute="top" secondItem="eeh-tL-hFm" secondAttribute="bottom" constant="20" id="LbF-he-hvK"/>
+                            <constraint firstItem="8CI-9i-a3w" firstAttribute="top" secondItem="rOy-V7-Cbh" secondAttribute="bottom" constant="20" id="Lxl-fA-FE3"/>
+                            <constraint firstItem="vmu-iS-O72" firstAttribute="top" secondItem="8CI-9i-a3w" secondAttribute="bottom" constant="8" id="NEl-Bb-2zg"/>
+                            <constraint firstAttribute="bottom" secondItem="vmu-iS-O72" secondAttribute="bottom" id="O9l-k9-SwE"/>
+                            <constraint firstItem="eeh-tL-hFm" firstAttribute="top" secondItem="o8l-IB-Lbw" secondAttribute="bottom" constant="20" id="Qk3-1Y-cAN"/>
+                            <constraint firstItem="rOy-V7-Cbh" firstAttribute="leading" secondItem="FvF-cO-CCi" secondAttribute="leading" constant="16" id="WdU-wH-puB"/>
+                            <constraint firstItem="8CI-9i-a3w" firstAttribute="leading" secondItem="FvF-cO-CCi" secondAttribute="leading" constant="20" id="enR-cN-Mwl"/>
+                            <constraint firstAttribute="trailing" secondItem="vmu-iS-O72" secondAttribute="trailing" id="o6Z-G1-bU0"/>
+                            <constraint firstItem="rOy-V7-Cbh" firstAttribute="centerX" secondItem="FvF-cO-CCi" secondAttribute="centerX" id="uZ2-kp-F6C"/>
+                            <constraint firstItem="eeh-tL-hFm" firstAttribute="leading" secondItem="FvF-cO-CCi" secondAttribute="leading" constant="20" id="zVK-pR-8By"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post Detail" id="YI8-Ds-cix"/>
+                    <connections>
+                        <outlet property="commentsTableView" destination="vmu-iS-O72" id="jET-FG-XND"/>
+                        <outlet property="contentTextView" destination="rOy-V7-Cbh" id="cfy-8g-wys"/>
+                        <outlet property="titleField" destination="eeh-tL-hFm" id="PXw-mi-pQW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QaH-TL-C2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

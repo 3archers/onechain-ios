@@ -62,6 +62,11 @@ class PostsViewController: UIViewController {
             let postCreateViewController = navController.topViewController
                 as! PostCreateViewController
             postCreateViewController.project = project
+        } else if segue.identifier == "Detail" {
+            let row = tableView.indexPathForCell(sender as! UITableViewCell)!.row
+            let postDetailViewController = segue.destinationViewController
+                as! PostDetailViewController
+            postDetailViewController.post = posts[row]
         }
     }
 }
