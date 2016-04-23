@@ -29,6 +29,9 @@ class PostDetailViewController: UIViewController {
         contentTextView.editable = false
         contentTextView.text = post["content"] as? String
 
+        commentField.inputAccessoryView = UIView()
+        commentField.keyboardDistanceFromTextField = 8
+
         commentsTableView.dataSource = self
         commentsTableView.delegate = self
         commentsTableView.rowHeight = UITableViewAutomaticDimension
