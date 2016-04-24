@@ -305,7 +305,6 @@
 				C69EABA31CC757DF00F4ECA6 /* Project */,
 				140497E61CC72625001D8278 /* Event */,
 				1459716C1CC346BB00E15963 /* Task */,
-				146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */,
 				1460F5E31CB0CC4800217815 /* UserTableViewCell.swift */,
 			);
 			name = Views;
@@ -323,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				C69EABA41CC757F000F4ECA6 /* MemberCollectionViewCell.swift */,
+				146FB48B1CB043BC005B42C1 /* ProjectTableViewCell.swift */,
 			);
 			name = Project;
 			sourceTree = "<group>";
