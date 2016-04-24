@@ -29,8 +29,7 @@ class PostsViewController: UIViewController {
 
         tabBarController?.navigationItem.title = "Posts"
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "New",
-            style: .Plain,
+            barButtonSystemItem: UIBarButtonSystemItem.Add,
             target: self,
             action: "onNew:"
         )

@@ -28,6 +28,12 @@ class HomeViewController: UIViewController {
         fetchProjects()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        tableView.reloadData()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -51,6 +57,9 @@ class HomeViewController: UIViewController {
 
             let postsViewController = tabBarController.viewControllers![3] as! PostsViewController
             postsViewController.project = projects[row]
+
+            let filesViewController = tabBarController.viewControllers![4] as! FilesViewController
+            filesViewController.project = projects[row]
         } else if segue.identifier == "New Project" {
             let navController = segue.destinationViewController as! UINavigationController
             let projectCreateViewController = navController.topViewController

@@ -17,30 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXO-d4-gnC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="321" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXO-d4-gnC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="File Cell" id="Rm7-8d-QZ4">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="File Cell" rowHeight="321" id="Rm7-8d-QZ4" customClass="FileTableViewCell" customModule="OneChain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="321"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rm7-8d-QZ4" id="nYm-bA-HZS">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxo-hR-zyb">
-                                                    <rect key="frame" x="12" y="12" width="76" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0hR-Se-jj7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="320" id="7TZ-mf-izZ"/>
+                                                        <constraint firstAttribute="width" constant="320" id="uv9-oz-PgR"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Bxo-hR-zyb" firstAttribute="top" secondItem="nYm-bA-HZS" secondAttribute="top" constant="12" id="P0u-YG-Epw"/>
-                                                <constraint firstItem="Bxo-hR-zyb" firstAttribute="leading" secondItem="nYm-bA-HZS" secondAttribute="leading" constant="12" id="ofn-TL-ffW"/>
+                                                <constraint firstAttribute="trailing" secondItem="0hR-Se-jj7" secondAttribute="trailing" id="FbL-9W-ITT"/>
+                                                <constraint firstItem="0hR-Se-jj7" firstAttribute="leading" secondItem="nYm-bA-HZS" secondAttribute="leading" id="VOm-g9-cpC"/>
+                                                <constraint firstItem="0hR-Se-jj7" firstAttribute="top" secondItem="nYm-bA-HZS" secondAttribute="top" id="isJ-2D-IdZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageView_" destination="0hR-Se-jj7" id="Nka-cD-WoL"/>
                                             <segue destination="P3q-jB-lNb" kind="push" id="reg-I6-zKE"/>
                                         </connections>
                                     </tableViewCell>
@@ -60,11 +63,76 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="hXO-d4-gnC" id="hen-Lt-iZj"/>
+                        <segue destination="YC7-qJ-WRM" kind="modal" identifier="New File" id="tqA-U0-lzq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhA-KO-uRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="200" y="300"/>
+        </scene>
+        <!--New File-->
+        <scene sceneID="IKz-Yf-7N6">
+            <objects>
+                <viewController id="3M9-f7-ylM" customClass="FileCreateViewController" customModule="OneChain" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9a2-i7-9Dn"/>
+                        <viewControllerLayoutGuide type="bottom" id="20J-tl-rIo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oTC-sH-MaV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LjQ-3b-c9O">
+                                <rect key="frame" x="20" y="84" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w40-HY-g4L">
+                                <rect key="frame" x="0.0" y="125" width="320" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="5EP-Q2-ZzY"/>
+                                    <constraint firstAttribute="height" constant="320" id="gea-Ju-cEe"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5bt-yQ-cGN" appends="YES" id="GDG-Ic-8T7"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LjQ-3b-c9O" firstAttribute="leading" secondItem="oTC-sH-MaV" secondAttribute="leading" constant="20" id="2ej-jV-OEV"/>
+                            <constraint firstItem="LjQ-3b-c9O" firstAttribute="centerX" secondItem="oTC-sH-MaV" secondAttribute="centerX" id="PDv-BC-Sq8"/>
+                            <constraint firstItem="w40-HY-g4L" firstAttribute="centerX" secondItem="oTC-sH-MaV" secondAttribute="centerX" id="SG9-0m-N2R"/>
+                            <constraint firstItem="w40-HY-g4L" firstAttribute="top" secondItem="LjQ-3b-c9O" secondAttribute="bottom" constant="20" id="cPv-zO-5If"/>
+                            <constraint firstItem="LjQ-3b-c9O" firstAttribute="top" secondItem="9a2-i7-9Dn" secondAttribute="bottom" constant="20" id="xvq-8B-ELX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New File" id="Aom-JP-806">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="JTg-1H-TK7">
+                            <connections>
+                                <action selector="onCancel:" destination="3M9-f7-ylM" id="A0a-a7-pWn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="k6r-ZI-osP">
+                            <connections>
+                                <action selector="onSubmit:" destination="3M9-f7-ylM" id="weO-sz-lFC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="w40-HY-g4L" id="bww-mZ-jVT"/>
+                        <outlet property="titleField" destination="LjQ-3b-c9O" id="lMA-D0-jrK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nv7-WB-usM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5bt-yQ-cGN">
+                    <connections>
+                        <action selector="onImageViewTap:" destination="3M9-f7-ylM" id="YQE-97-3gJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="700" y="-400"/>
         </scene>
         <!--File Detail-->
         <scene sceneID="eCF-B2-SsA">
@@ -84,6 +152,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjf-QR-0r3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="300"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="noU-e7-5cu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YC7-qJ-WRM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="CCb-UI-4XY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3M9-f7-ylM" kind="relationship" relationship="rootViewController" id="pgZ-4a-ZeY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dB4-dg-GzA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="-400"/>
         </scene>
     </scenes>
     <resources>

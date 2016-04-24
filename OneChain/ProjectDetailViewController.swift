@@ -23,10 +23,10 @@ class ProjectDetailViewController: UIViewController {
 
         tabBarController?.navigationItem.title = "Project Detail"
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Edit",
-            style: .Plain,
+            barButtonSystemItem: UIBarButtonSystemItem.Edit,
             target: self,
-            action: "onEdit:")
+            action: "onEdit:"
+        )
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -48,6 +48,10 @@ class ProjectDetailViewController: UIViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let editViewController = navController.topViewController as! ProjectEditViewController
             editViewController.project = project
+        } else if segue.identifier == "Profile" {
+            let indexPath = collectionView.indexPathForCell(sender as! UICollectionViewCell)!
+            let profileViewController = segue.destinationViewController as! ProfileViewController
+            profileViewController.user = members[indexPath.row]
         }
     }
 
