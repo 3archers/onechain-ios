@@ -5,6 +5,16 @@ OneChain is a powerful integrated platform for project management and task colla
 
 <img src='er_diagram.png' title='ER Diagram' width='' alt='ER Diagram' />
 
+## Features
+
+- [Sign up, Sign in and Sign out](https://github.com/3archers/onechain-ios/issues/2)
+- [User Profile and Contacts](https://github.com/3archers/onechain-ios/issues/5)
+- [Projects](https://github.com/3archers/onechain-ios/issues/6)
+    - [Tasks](https://github.com/3archers/onechain-ios/issues/7)
+    - [Events](https://github.com/3archers/onechain-ios/issues/18)
+    - [Posts](https://github.com/3archers/onechain-ios/issues/16)
+    - [Files (Photos)](https://github.com/3archers/onechain-ios/issues/21)
+
 ## License
 
     Copyright [2016] [3archers]
