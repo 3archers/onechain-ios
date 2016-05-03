@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class ContactsViewController: UIViewController {
@@ -25,12 +26,17 @@ class ContactsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
+        let progressHud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progressHud.labelFont = UIFont.systemFontOfSize(14)
+        progressHud.labelText = "Loading"
+
         let contacts = PFUser.currentUser()!.objectForKey("contacts") as! [PFUser]
         PFUser.fetchAllIfNeededInBackground(contacts) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.users = objects as! [PFUser]
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
                 // TODO: handle failure

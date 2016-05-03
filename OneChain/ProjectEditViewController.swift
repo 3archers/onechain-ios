@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class ProjectEditViewController: UIViewController {
@@ -36,6 +37,8 @@ class ProjectEditViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func onSave(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         project["name"] = nameTextField.text
         project["description"] = descriptionTextView.text
 
@@ -47,6 +50,7 @@ class ProjectEditViewController: UIViewController {
 
         project.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 self.view.endEditing(true)
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
@@ -63,6 +67,8 @@ class ProjectEditViewController: UIViewController {
     // MARK: - Helpers
 
     func fetchContacts() {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let contacts = PFUser.currentUser()!.objectForKey("contacts") as! [PFUser]
         PFUser.fetchAllIfNeededInBackground(contacts) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -71,6 +77,7 @@ class ProjectEditViewController: UIViewController {
                 self.filterContacts()
                 self.selected = [Bool](count: contacts.count, repeatedValue: false)
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
                 // TODO: handle failure

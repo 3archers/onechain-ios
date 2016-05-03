@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class TasksViewController: UIViewController {
@@ -34,11 +35,16 @@ class TasksViewController: UIViewController {
             action: "onNew:"
         )
 
+        let progressHud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progressHud.labelFont = UIFont.systemFontOfSize(14)
+        progressHud.labelText = "Loading"
+
         PFObject.fetchAllIfNeededInBackground((project["tasks"] as! [PFObject])) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.tasks = objects as! [PFObject]
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
             }

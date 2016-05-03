@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class SignUpViewController: UIViewController {
@@ -24,6 +25,8 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func onSignUp(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let newUser = PFUser()
         newUser.username = usernameField.text
         newUser.password = passwordField.text
@@ -34,8 +37,8 @@ class SignUpViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else {
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 self.performSegueWithIdentifier("signup", sender: nil)
-                print("User signed up")
             }
         }
     }

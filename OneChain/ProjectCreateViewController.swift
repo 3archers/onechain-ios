@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 @objc protocol ProjectCreateViewControllerDelegate {
@@ -43,6 +44,8 @@ class ProjectCreateViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func onSubmit(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         var selectedContacts = [PFUser.currentUser()!]
         for (index, contact) in contacts.enumerate() {
             if (selected[index]) {
@@ -65,6 +68,7 @@ class ProjectCreateViewController: UIViewController {
         let project = PFObject(className: "Project", dictionary: dictionary)
         project.saveInBackgroundWithBlock{ (success: Bool, error: NSError?) -> Void in
             if success {
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 self.view.endEditing(true)
                 self.delegate?.projectCreateViewController?(self, didCreateNewProject: project)
                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -83,6 +87,8 @@ class ProjectCreateViewController: UIViewController {
     // MARK: - Helpers
 
     func fetchContacts() {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let allContacts = PFUser.currentUser()!.objectForKey("contacts") as! [PFUser]
         PFUser.fetchAllIfNeededInBackground(allContacts) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -90,6 +96,7 @@ class ProjectCreateViewController: UIViewController {
                 self.contacts = objects as! [PFUser]
                 self.selected = [Bool](count: self.contacts.count, repeatedValue: false)
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
                 // TODO: handle failure

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class PostCreateViewController: UIViewController {
@@ -37,6 +38,8 @@ class PostCreateViewController: UIViewController {
     }
 
     @IBAction func onSubmit(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         post["title"] = titleField.text
         post["content"] = contentTextView.text
         post["author"] = PFUser.currentUser()
@@ -45,6 +48,7 @@ class PostCreateViewController: UIViewController {
         project.addObject(post, forKey: "posts")
         project.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 self.view.endEditing(true)
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

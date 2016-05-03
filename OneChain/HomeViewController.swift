@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 let userDidSignOutNotification = "userDidSignOutNotification"
@@ -81,6 +82,10 @@ class HomeViewController: UIViewController {
     // MARK: - Helpers
 
     func fetchProjects() {
+        let progressHud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progressHud.labelFont = UIFont.systemFontOfSize(14)
+        progressHud.labelText = "Loading"
+
         let query = PFQuery(className: "Project")
         query.includeKey("members")
         query.whereKey("members", equalTo: PFUser.currentUser()!)
@@ -90,6 +95,7 @@ class HomeViewController: UIViewController {
             if let objects = objects {
                 self.projects = objects
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
                 // TODO: handle error

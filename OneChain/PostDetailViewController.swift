@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class PostDetailViewController: UIViewController {
@@ -37,11 +38,14 @@ class PostDetailViewController: UIViewController {
         commentsTableView.rowHeight = UITableViewAutomaticDimension
         commentsTableView.estimatedRowHeight = 60
 
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         PFObject.fetchAllIfNeededInBackground((post["comments"] as! [PFObject])) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.comments = objects as! [PFObject]
                 self.commentsTableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
             }
@@ -53,6 +57,8 @@ class PostDetailViewController: UIViewController {
     }
 
     @IBAction func onCommentSubmit(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let comment = PFObject(className: "Comment")
         comment["content"] = commentField.text
         comment["author"] = PFUser.currentUser()
@@ -63,6 +69,7 @@ class PostDetailViewController: UIViewController {
                 self.commentField.resignFirstResponder()
                 self.comments.insert(comment, atIndex: 0)
                 self.commentsTableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
             }

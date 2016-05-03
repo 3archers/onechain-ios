@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class TaskOwnerEditViewController: UIViewController {
@@ -36,11 +37,14 @@ class TaskOwnerEditViewController: UIViewController {
             }
         }
 
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         PFObject.fetchAllIfNeededInBackground(members) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.members = objects as! [PFUser]
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
             }

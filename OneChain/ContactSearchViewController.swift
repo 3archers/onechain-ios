@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class ContactSearchViewController: UIViewController {
@@ -80,6 +81,8 @@ extension ContactSearchViewController: UITableViewDelegate {
 extension ContactSearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let query = PFUser.query()
         query?.whereKey("username", containsString: searchBar.text ?? "")
         query?.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
@@ -88,6 +91,7 @@ extension ContactSearchViewController: UISearchBarDelegate {
                     !self.existContactIds.containsObject(object.objectId!)
                 }) as! [PFUser]
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
                 // TODO: handle error

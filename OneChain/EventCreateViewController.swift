@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class EventCreateViewController: UIViewController {
@@ -54,9 +55,12 @@ class EventCreateViewController: UIViewController {
     }
 
     @IBAction func onSubmit(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         project.addObject(event, forKey: "events")
         project.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 self.view.endEditing(true)
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

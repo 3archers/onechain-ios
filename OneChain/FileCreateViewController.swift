@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class FileCreateViewController: UIViewController {
@@ -44,6 +45,8 @@ class FileCreateViewController: UIViewController {
     }
 
     @IBAction func onSubmit(sender: AnyObject) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         if imageView.image != nil && !titleField.text!.isEmpty {
             file["author"] = PFUser.currentUser()
             file["title"] = titleField.text
@@ -51,6 +54,7 @@ class FileCreateViewController: UIViewController {
             project.addObject(file, forKey: "files")
             project.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 if success {
+                    MBProgressHUD.hideHUDForView(self.view, animated: true)
                     self.view.endEditing(true)
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {

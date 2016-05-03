@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class ProjectDetailViewController: UIViewController {
@@ -64,12 +65,15 @@ class ProjectDetailViewController: UIViewController {
     // MARK: - Helpers
 
     func fetchMembers() {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let members = project["members"] as! [PFUser]
         PFUser.fetchAllIfNeededInBackground(members) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.members = objects as! [PFUser]
                 self.collectionView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
                 // TODO: handle failure

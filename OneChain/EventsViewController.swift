@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 import Parse
 
 class EventsViewController: UIViewController {
@@ -34,12 +35,17 @@ class EventsViewController: UIViewController {
             action: "onNew:"
         )
 
+        let progressHud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        progressHud.labelFont = UIFont.systemFontOfSize(14)
+        progressHud.labelText = "Loading"
+
         let events = project["events"] as! [PFObject]
         PFObject.fetchAllIfNeededInBackground(events) {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if let objects = objects {
                 self.events = objects as! [PFObject]
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             } else {
                 print(error?.localizedDescription)
             }
