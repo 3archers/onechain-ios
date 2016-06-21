@@ -15,6 +15,17 @@ OneChain is a powerful integrated platform for project management and task colla
     - [Posts](https://github.com/3archers/onechain-ios/issues/16)
     - [Files (Photos)](https://github.com/3archers/onechain-ios/issues/21)
 
+## Video Walkthroughs
+
+<img src='http://i.imgur.com/NOmukx1.gif' title='Video Walkthrough 1' width='' alt='Video Walkthrough 1' />
+<img src='http://i.imgur.com/yjVeRJW.gif' title='Video Walkthrough 2' width='' alt='Video Walkthrough 2' />
+<img src='http://i.imgur.com/lEYgMEl.gif' title='Video Walkthrough 3' width='' alt='Video Walkthrough 3' />
+<img src='http://i.imgur.com/CUQxDSA.gif' title='Video Walkthrough 4' width='' alt='Video Walkthrough 4' />
+<img src='http://i.imgur.com/jn8qxbd.gif' title='Video Walkthrough 5' width='' alt='Video Walkthrough 5' />
+<img src='http://i.imgur.com/PevUD8Z.gif' title='Video Walkthrough 6' width='' alt='Video Walkthrough 6' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 ## License
 
     Copyright [2016] [3archers]
